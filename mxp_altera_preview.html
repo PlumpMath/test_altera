@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+<link type="text/css" rel="stylesheet" href="css/jquery.ui.all.css"/>
+<link type="text/css" rel="stylesheet" href="css/jquery.tocify.css"/>
+<style>
+body {
+    padding-top: 20px;
+}
+p {
+    font-size: 16px;
+}
+.headerDoc {
+    color: #005580;
+}
+
+@media (max-width: 767px) {
+    #toc {
+        position: relative;
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span3">
+<div id="toc"></div>
+</div>
+<div class="span9">
+<h1 id="vectorblox-mxp-altera-quickstart">VectorBlox MXP Altera Quickstart</h1>
+<p>This section describes how to download one of the provided pre-built FPGA bitstreams to a development board and how to compile and run a test program on it.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, make sure you have:</p>
+<ul>
+<li>Installed Altera Quartus II and the VectorBlox MXP SDK.</li>
+<li>Installed and tested the USB Blaster device driver.</li>
+<li><p>A supported development board. See the contents of</p>
+<code>boards/</code>.</li>
+<li><p>Connected your development board to your computer via USB cable.</p></li>
+</ul>
+<h2 id="configuring-the-board">Configuring the board</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Start a Nios II Command Shell</strong></p>
+<p>This sets up the proper environment variables for using the Nios II compiler system. Under Windows, this is a bash-shell under the Cygwin environment.</p></li>
+<li><p><strong>Connect to the board</strong></p>
+<p>Run <code>jtagconfig</code> which finds the USB Blaster and connects to the development board. If the response is <code>No JTAG hardware available</code>, be sure the USB cable is connected and the board is turned on.</p>
+<p>If more than one board is connected, the target cable will have to be specified in all the commands below, adding <code>-c CABLE_NUM</code> to each command.</p></li>
+<li><p><strong>Configure the FPGA</strong></p>
+<p>Navigate to one of the prebuilt VectorBlox MXP systems for your development board, located in</p>
+<p><code>boards/&lt;board_name&gt;/prebuilt_*</code>.</p>
+<p>From here, download the <code>.sof</code> file to the FPGA board using the command line:</p>
+<pre><code>quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p>Alternatively, you may start the GUI using <code>quartus_pgmw</code>, press <strong><em>Add File...</em></strong> and choose the <code>.sof</code> file, press <strong><em>Hardware Setup...</em></strong> and choose <strong><em>USB Blaster</em></strong> in the pulldown list, and finally press the <strong><em>Start</em></strong> button.</p></li>
+</ol>
+<h2 id="running-the-software">Running the software</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Start a new Nios II Command Shell</strong></p>
+<p>The remaining steps are to be performed in this new Nios II Command Shell .</p></li>
+<li><p><strong>Make the executable</strong></p>
+<p>Navigate to a test application such as <code>vbw_vec_add_t</code>, located in</p>
+<p><code>software/bmark/vbw_vec_add_t</code>.</p>
+<p>To compile the program for the FPGA bitstream you previously selected, you need to pass the absolute path of the Board Support Package (BSP) to <code>make</code>.</p>
+<p>In Linux, run</p>
+<pre><code>make BSP_ROOT_DIR=`pwd`/../../../boards/&lt;board_name&gt;/&lt;prebuilt_system&gt;/bsp</code></pre>
+<p>where <code>&lt;board_name&gt;</code> and <code>&lt;prebuilt_system&gt;</code> are as selected earlier.</p>
+<p>In Windows (Cygwin), run</p>
+<pre><code>make
+  BSP_ROOT_DIR=`cygpath -wa ../../../boards/&lt;board_name&gt;/&lt;prebuilt_system&gt;/bsp`</code></pre>
+<p>After a long list of messages and a few seconds, the file <code>test.elf</code> should have been created.</p></li>
+<li><p><strong>Download the executable</strong></p>
+<p>Download and run the executable from the command line:</p>
+<pre><code>nios2-download -g -r test.elf</code></pre>
+<p>After the download completes, the flag <code>-r</code> resets the Nios II computer system, and the flag <code>-g</code> tells the computer to 'go' or execute the program.</p></li>
+<li><p><strong>View execution output</strong></p>
+<p>The executable may use stdin or stdout for <code>printf()</code>, <code>scanf()</code>, and similar functions. A terminal emulator can connect with the Nios II computer system to provide this I/O behaviour by running</p>
+<pre><code>nios2-terminal</code></pre>
+<p>If the Nios II program wants to disconnect with the terminal, it can print a Control-D character with</p>
+<pre><code>putchar(4);</code></pre>
+<p>To disconnect manually host-side, type <code>C-c</code>. Note that Control-C does not actually stop the application from running. However, with the <code>nios2-terminal</code> disconnected, the application may eventually block if it fills its <code>printf()</code> buffer and cannot flush the output device.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.tocify.min.js"></script>
+<script>
+$(function() {
+    var toc = $("#toc").tocify({
+        selectors: "h1, h2",
+        history: false,
+        smoothScrollSpeed: "fast",
+        }).data("toc-tocify");
+      $(".optionName").popover({ trigger: "hover" });
+});
+</script>
+</body>
+</html>
