@@ -14,6 +14,7 @@ Our preview release consists of:
 To get started immediately:
 
 - Ensure you have an [available development board](http://vectorblox.github.io/test_altera/mxp_altera_boards.html)
+- Clone this repository or use the Download ZIP button.
 - Follow the [Altera Quickstart](http://vectorblox.github.io/test_altera/mxp_altera_preview.html) 
 
 For further VectorBlox hardware/software documentation, refer to:
