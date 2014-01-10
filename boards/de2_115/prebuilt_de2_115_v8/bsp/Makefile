@@ -561,55 +561,6 @@ build_post_process :
 
 
 #------------------------------------------------------------------------------
-#                             MAKEFILE UP TO DATE?
-#
-# Is this very Makefile up to date? Someone may have changed the BSP settings
-# file or the associated target hardware.
-#------------------------------------------------------------------------------
-# Skip this check when clean is the only target
-ifneq ($(MAKECMDGOALS),clean)
-
-ifneq ($(wildcard $(SETTINGS_FILE)),$(SETTINGS_FILE))
-$(warning Warning: BSP Settings File $(SETTINGS_FILE) could not be found.)
-endif
-
-Makefile: $(wildcard $(SETTINGS_FILE))
-	@$(ECHO) Makefile not up to date.
-	@$(ECHO) $(SETTINGS_FILE) has been modified since the BSP Makefile was generated.
-	@$(ECHO)
-	@$(ECHO) Generate the BSP to update the Makefile, and then build again.
-	@$(ECHO)
-	@$(ECHO) To generate from Eclipse:
-	@$(ECHO) " 1. Right-click the BSP project."
-	@$(ECHO) " 2. In the Nios II Menu, click Generate BSP."
-	@$(ECHO)
-	@$(ECHO) To generate from the command line:
-	@$(ECHO) " nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>"
-	@$(ECHO)
-	@exit 1
-
-ifneq ($(wildcard $(SOPC_FILE)),$(SOPC_FILE))
-$(warning Warning: SOPC File $(SOPC_FILE) could not be found.)
-endif
-
-public.mk: $(wildcard $(SOPC_FILE))
-	@$(ECHO) Makefile not up to date.
-	@$(ECHO) $(SOPC_FILE) has been modified since the BSP was generated.
-	@$(ECHO)
-	@$(ECHO) Generate the BSP to update the Makefile, and then build again.
-	@$(ECHO)
-	@$(ECHO) To generate from Eclipse:
-	@$(ECHO) " 1. Right-click the BSP project."
-	@$(ECHO) " 2. In the Nios II Menu, click Generate BSP."
-	@$(ECHO)
-	@$(ECHO) To generate from the command line:
-	@$(ECHO) " nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>"
-	@$(ECHO)
-	@exit 1
-
-endif # $(MAKECMDGOALS) != clean
-
-#------------------------------------------------------------------------------
 #                     PATTERN RULES TO BUILD OBJECTS
 #------------------------------------------------------------------------------
 $(OBJ_DIR)/%.o: %.c

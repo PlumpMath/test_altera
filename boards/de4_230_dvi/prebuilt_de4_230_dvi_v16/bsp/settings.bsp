@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>20-Dec-2013 9:30:42 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1387603842120</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>9-Jan-2014 3:31:31 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1389310291828</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
         <BspSettingsFile>software/lib/bsp/settings.bsp</BspSettingsFile>
         <SopcDesignFile>../vblox1.sopcinfo</SopcDesignFile>
