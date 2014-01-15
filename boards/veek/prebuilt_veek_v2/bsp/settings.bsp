@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>9-Jan-2014 3:31:58 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1389310318871</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>14-Jan-2014 5:37:52 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1389749872171</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
         <BspSettingsFile>software/lib/bsp/settings.bsp</BspSettingsFile>
         <SopcDesignFile>../vblox1.sopcinfo</SopcDesignFile>
@@ -915,12 +915,6 @@
                 <addressRange>0x108000E0 - 0x108000FF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>altpll_0</slaveDescriptor>
-                <addressRange>0x10800100 - 0x1080010F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>td_reset_pio</slaveDescriptor>

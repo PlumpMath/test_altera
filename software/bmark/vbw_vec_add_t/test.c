@@ -63,6 +63,7 @@ double test_vector( vbx_sp_t *v_out, vbx_sp_t *v_in1, vbx_sp_t *v_in2, int N, do
 	vbx_timestamp_start();
 	time_start = vbx_timestamp();
 	VBX_T(vbw_vec_add)( v_out, v_in1, v_in2 );
+	vbx_sync();
 	time_stop = vbx_timestamp();
 
 	printf( "...done\n" );

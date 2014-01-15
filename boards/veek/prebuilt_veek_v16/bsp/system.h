@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'vblox1'
  * SOPC Builder design path: ../../../vblox1.sopcinfo
  *
- * Generated: Thu Jan 09 15:31:55 PST 2014
+ * Generated: Tue Jan 14 17:37:38 PST 2014
  */
 
 /*
@@ -200,20 +200,6 @@
 #define ALT_VIP_VFR_0_NAME "/dev/alt_vip_vfr_0"
 #define ALT_VIP_VFR_0_SPAN 128
 #define ALT_VIP_VFR_0_TYPE "alt_vip_vfr"
-
-
-/*
- * altpll_0 configuration
- *
- */
-
-#define ALTPLL_0_BASE 0x10800100
-#define ALTPLL_0_IRQ -1
-#define ALTPLL_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define ALTPLL_0_NAME "/dev/altpll_0"
-#define ALTPLL_0_SPAN 16
-#define ALTPLL_0_TYPE "altpll"
-#define ALT_MODULE_CLASS_altpll_0 altpll
 
 
 /*
