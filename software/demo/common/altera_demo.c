@@ -467,7 +467,7 @@ void writer_init(demo_t *pDemo)
 #else
 	stream_writer_init(pDemo);
 #endif
-#else // !defined(__STREAM_WRITER)
+#elif defined(__FRAME_WRITER)
 	frame_writer_init(pDemo);
 #endif
 

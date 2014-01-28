@@ -504,7 +504,7 @@ void loop_demo(demo_t *pDemo)
 	printf("Starting main loop\n");
 
 	// immediately jump into ...
-	next_mode = MODE_VECTOR_MULTI;
+	next_mode = MODE_VECTOR_REPULSION;
 	current_mode     = -1;
 
 	while(1) {
