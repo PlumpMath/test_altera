@@ -162,12 +162,12 @@ make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
 <p>Download the ELF to the board and connect to the serial console:</p>
 <pre><code>nios2-download -r -g veek_demo.elf &amp;&amp; nios2-terminal</code></pre>
 <p>The touch screen is used to select the mode of operation:</p>
+<p><strong>Top-left</strong> Toggles between the Nios-only implementation of an algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode). Pressing any other region runs the selected algorithm in vector mode.</p>
+<p><strong>Top-centre</strong> Selects Edge Detection</p>
+<p><strong>Top-right</strong> Selects Face Detection</p>
 <p><strong>Bottom-left</strong> Selects Motion Estimation</p>
-<p><strong>Bottom-centre</strong> Selects Edge Detection</p>
+<p><strong>Bottom-centre</strong> Selects Mandelbrot</p>
 <p><strong>Bottom-right</strong> Selects Particle Repulsion</p>
-<p><strong>Top-left</strong> Selects Face Detection</p>
-<p><strong>Top-centre</strong> Selects Mandelbrot</p>
-<p><strong>Top-right</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode). Pressing any other region runs the selected algorithm in vector mode.</p>
 </div>
 </div>
 </div>
