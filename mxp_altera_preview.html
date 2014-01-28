@@ -36,46 +36,45 @@ p {
 <div id="toc"></div>
 </div>
 <div class="span9">
-<h1 id="vectorblox-mxp-altera-quickstart">VectorBlox MXP Altera Quickstart</h1>
+<h1 id="vectorblox-mxp-altera-quickstart"><span class="header-section-number">1</span> VectorBlox MXP Altera Quickstart</h1>
 <p>This section describes how to download one of the provided pre-built FPGA bitstreams to a development board and how to compile and run a test program on it.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<p>If you have cloned the VectorBlox github repository, the string <strong>TOPDIR</strong> below refers to the location of your local repository.</p>
+<p>If you have a VectorBlox MXP hardware IP release, the string <strong>TOPDIR</strong> refers to the <code>examples</code> subdirectory of the extracted release.</p>
+<h2 id="prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h2>
 <p>Before you begin, make sure you have:</p>
 <ul>
-<li>Installed Altera Quartus II and the VectorBlox MXP SDK.</li>
-<li>Installed and tested the USB Blaster device driver.</li>
-<li><p>A supported development board. See the contents of</p>
-<code>boards/</code>.</li>
+<li><p>Installed Altera Quartus II 11.0 or later.</p>
+<p>Note that the pre-built bitstreams were created with version 13.0sp1, so you will need to use version 13.0sp1 or later of the Quartus II Programmer to download these bitstreams to the FPGA. You can download the latest version of the Quartus II Programmer as a standalone program from the Altera web site if you do not wish to install a full upgrade of Quartus II.</p></li>
+<li><p>Installed and tested the USB Blaster device driver.</p></li>
+<li><p>A supported development board. See the contents of <code>TOPDIR/boards/</code>.</p></li>
 <li><p>Connected your development board to your computer via USB cable.</p></li>
 </ul>
-<h2 id="configuring-the-board">Configuring the board</h2>
+<h2 id="configuring-the-board"><span class="header-section-number">1.2</span> Configuring the board</h2>
 <ol style="list-style-type: decimal">
 <li><p><strong>Start a Nios II Command Shell</strong></p>
 <p>This sets up the proper environment variables for using the Nios II compiler system. Under Windows, this is a bash-shell under the Cygwin environment.</p></li>
 <li><p><strong>Connect to the board</strong></p>
-<p>Run <code>jtagconfig</code> which finds the USB Blaster and connects to the development board. If the response is <code>No JTAG hardware available</code>, be sure the USB cable is connected and the board is turned on.</p>
+<p>Run <code>jtagconfig</code> which finds the USB Blaster and connects to the development board. If the response is &quot;No JTAG hardware available,&quot; be sure the USB cable is connected and the board is turned on.</p>
 <p>If more than one board is connected, the target cable will have to be specified in all the commands below, adding <code>-c CABLE_NUM</code> to each command.</p></li>
 <li><p><strong>Configure the FPGA</strong></p>
-<p>Navigate to one of the prebuilt VectorBlox MXP systems for your development board, located in</p>
-<p><code>boards/&lt;board_name&gt;/prebuilt_*</code>.</p>
+<p>Navigate to one of the prebuilt VectorBlox MXP systems for your development board, located in <code>TOPDIR/boards/&lt;board_name&gt;/prebuilt_*</code>.</p>
+<p>For example, for the DE2-115 board, change directory to <code>TOPDIR/boards/de2_115/prebuilt_de2_115_v16</code> for a 16-lane MXP system.</p>
 <p>From here, download the <code>.sof</code> file to the FPGA board using the command line:</p>
 <pre><code>quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
-<p>Alternatively, you may start the GUI using <code>quartus_pgmw</code>, press <strong><em>Add File...</em></strong> and choose the <code>.sof</code> file, press <strong><em>Hardware Setup...</em></strong> and choose <strong><em>USB Blaster</em></strong> in the pulldown list, and finally press the <strong><em>Start</em></strong> button.</p></li>
+<p>Alternatively, you may start the GUI using <code>quartus_pgmw</code>, press <strong><em>Add File...</em></strong> and choose the <code>.sof</code> file, press <strong><em>Hardware Setup...</em></strong> and choose <strong><em>USB Blaster</em></strong> in the pulldown list, and finally press the <strong><em>Start</em></strong> button.</p>
+<p>Now, assuming you are still in the directory containing the SOF, store the absolute path of the pre-built system's Board Support Package in a shell variable. This will save typing later. In Linux, run</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>In Windows, Windows-style paths are expected by Altera's software Makefiles, so instead use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre></li>
 </ol>
-<h2 id="running-the-software">Running the software</h2>
+<h2 id="running-the-software"><span class="header-section-number">1.3</span> Running the software</h2>
 <ol style="list-style-type: decimal">
-<li><p><strong>Start a new Nios II Command Shell</strong></p>
-<p>The remaining steps are to be performed in this new Nios II Command Shell .</p></li>
 <li><p><strong>Make the executable</strong></p>
-<p>Navigate to a test application such as <code>vbw_vec_add_t</code>, located in</p>
-<p><code>software/bmark/vbw_vec_add_t</code>.</p>
-<p>To compile the program for the FPGA bitstream you previously selected, you need to pass the absolute path of the Board Support Package (BSP) to <code>make</code>.</p>
-<p>In Linux, run</p>
-<pre><code>make BSP_ROOT_DIR=`pwd`/../../../boards/&lt;board_name&gt;/&lt;prebuilt_system&gt;/bsp</code></pre>
-<p>where <code>&lt;board_name&gt;</code> and <code>&lt;prebuilt_system&gt;</code> are as selected earlier.</p>
-<p>In Windows (Cygwin), run</p>
-<pre><code>make
-  BSP_ROOT_DIR=`cygpath -wa ../../../boards/&lt;board_name&gt;/&lt;prebuilt_system&gt;/bsp`</code></pre>
-<p>After a long list of messages and a few seconds, the file <code>test.elf</code> should have been created.</p></li>
+<p>Navigate to a test application such as <code>vbw_vec_add_t</code>, located in <code>TOPDIR/software/bmark/vbw_vec_add_t</code>.</p>
+<p>To compile the program for the FPGA bitstream you previously selected, you need to pass the absolute path of the BSP to <code>make</code>. Assuming you have already saved this path in the <code>BSP_ROOT_DIR</code> shell variable as described earlier, you can run</p>
+<pre><code>make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>After a long list of messages and a few seconds, the file <code>test.elf</code> should have been created.</p>
+<p>Note that we used the <code>clean_all</code> target first to ensure that any libraries that might have been compiled against a different BSP in the past were cleaned and re-compiled. If you know that the libraries were already compiled for the selected BSP, you can omit the <code>clean_all</code> target.</p></li>
 <li><p><strong>Download the executable</strong></p>
 <p>Download and run the executable from the command line:</p>
 <pre><code>nios2-download -g -r test.elf</code></pre>
@@ -87,6 +86,88 @@ p {
 <pre><code>putchar(4);</code></pre>
 <p>To disconnect manually host-side, type <code>C-c</code>. Note that Control-C does not actually stop the application from running. However, with the <code>nios2-terminal</code> disconnected, the application may eventually block if it fills its <code>printf()</code> buffer and cannot flush the output device.</p></li>
 </ol>
+<h1 id="video-demo-application"><span class="header-section-number">2</span> Video Demo Application</h1>
+<p>We have written a demonstration program that runs on supported boards with video output capability. It provides a visual demonstration of the acceleration capabilities of the MXP processor by allowing the user to see the performance difference between algorithms running on the scalar host CPU alone and vectorized MXP implementations of the same algorithms.</p>
+<p>On systems with video output, the algorithms demonstrated are</p>
+<ul>
+<li><p>A two-dimensional n-body particle repulsion simulation with 512 particles and an external force that varies according to a Lissajous pattern. Q16.16 fixed-point arithmetic is used. The MXP implementation of the algorithm uses a custom instruction pipeline that computes the sum of the forces from all other particles on a given particle. The pipeline is described in the following conference paper: A. Severance, J. Edwards, H. Omidian, G. Lemieux, &quot;Soft Vector Processors with Streaming Pipelines,&quot; to appear at <em>International Symposium on Field-Programmable Gate Arrays (FPGA)</em>, February, 2014 (<a href="http://www.ece.ubc.ca/~lemieux/publications/bytopic.html">http://www.ece.ubc.ca/~lemieux/publications/bytopic.html</a>). The MXP implementation also makes use of a custom instruction for fixed-point division, if available.</p></li>
+<li><p>Mandelbrot set calculation at different zoom levels.</p></li>
+<li><p>Sobel edge detection run on half of the screen after each frame of the n-body particle simulation.</p></li>
+</ul>
+<p>On systems that also have video input, some additional algorithms are demonstrated:</p>
+<ul>
+<li><p>Sobel edge detection on the video input.</p></li>
+<li><p>Motion estimation (motion tracking) on the video input. Two boxes track motion in the input video using a sum-of-absolute-differences calculation. The boxes are re-centred every 400 input frames.</p></li>
+<li><p>Face Detection on the video input using Haar-like features. A green box is drawn around each detected face.</p></li>
+<li><p>Multi-algorithm mode with the particle simulation overlaid on top of the video input, with edge detection also running in the top left quadrant, motion estimation in the top right quadrant, and video inversion in the bottom right quadrant.</p></li>
+</ul>
+<h2 id="de2-115-vga-demo"><span class="header-section-number">2.1</span> DE2-115 VGA Demo</h2>
+<p>The demo for the DE2-115 board outputs 800x600 video on the VGA port. Connect a monitor to the VGA port to see the video output.</p>
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V16 system:</p>
+<pre><code>cd boards/de2_115/prebuilt_de2_115_v16
+quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>or, in Windows, use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre>
+<p>Compile the demo:</p>
+<pre><code>cd ../../../software/demo/de2_115
+make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>Download the ELF to the board and connect to the serial console:</p>
+<pre><code>nios2-download -r -g de2_demo.elf &amp;&amp; nios2-terminal</code></pre>
+<p>The rightmost DIP switches are used to select the mode of operation:</p>
+<p><strong>SW0</strong> Toggles between the Mandelbrot and Particle Repulsion algorithms.</p>
+<p><strong>SW1</strong> When running Particle Repulsion, toggles Edge Detection on the left half of the screen.</p>
+<p><strong>SW2</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode).</p>
+<h2 id="de4-230-hsmc-dvi-hd-video-processing-demo"><span class="header-section-number">2.2</span> DE4-230 + HSMC-DVI HD Video Processing Demo</h2>
+<p>The de4_dvi demo uses Terasic's HSMC-DVI daughter card for video input and output. The pre-built SOFs expect the HSMC-DVI card to be connected to HSMC connector B (closest to the power switch). A 1920x1080p 60Hz video source should be connected to the DVI RX port, and a 1080p monitor should be connected to the DVI TX port.</p>
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V32 system:</p>
+<pre><code>cd boards/de4_230_dvi/prebuilt_de4_230_dvi_v32
+quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p><strong>NOTE:</strong> After downloading a pre-built SOF for the first time, you must press Button[1] to reprogram the EDID EEPROM on the HSMC-DVI card so that the DVI RX port appears as a monitor capable of 1920x1080p @ 60 Hz. LED[7] will briefly blink as the EEPROM is re-programmed. If EDID initialization fails, please remove any cable attached to the DVI RX port and press Button[1] to try again.</p>
+<p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>or, in Windows, use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre>
+<p>Compile the demo:</p>
+<pre><code>cd ../../../software/demo/de4_dvi
+make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>Download the ELF to the board and connect to the serial console:</p>
+<pre><code>nios2-download -r -g de4_demo.elf &amp;&amp; nios2-terminal</code></pre>
+<p>The four DIP switches near the USB Blaster port are used to select the mode of operation.</p>
+<p><strong>SW2-0</strong> are combined to select from the modes below:</p>
+<ul>
+<li>000 - Video Pass-through</li>
+<li>001 - Particle Repulsion</li>
+<li>010 - Edge Detection on the input video</li>
+<li>011 - Motion Estimation on the input video</li>
+<li>100 - Mandelbrot</li>
+<li>101 - Haar Face Detection on the input video</li>
+<li>110 - Split Mode (Particle Repulsion with Edge Detection running on the right half of the screen)</li>
+<li>111 - Multi Mode (Particle Repulsion overlaid on the input video with Edge Detection, Motion Estimation, Inversion running in different quadrants)</li>
+</ul>
+<p><strong>SW3</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode).</p>
+<h2 id="veek-mt-touchscreen-based-demo"><span class="header-section-number">2.3</span> VEEK-MT Touchscreen-based Demo</h2>
+<p>The veek demo uses the on-board 5-megapixel digital image sensor for video input and and the 800x480 LCD touch screen for video output. (Video output is not mirrored to the VGA port.)</p>
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V16 system:</p>
+<pre><code>cd boards/veek/prebuilt_veek_v16
+quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>or, in Windows, use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre>
+<p>Compile the demo:</p>
+<pre><code>cd ../../../software/demo/veek
+make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>Download the ELF to the board and connect to the serial console:</p>
+<pre><code>nios2-download -r -g veek_demo.elf &amp;&amp; nios2-terminal</code></pre>
+<p>The touch screen is used to select the mode of operation:</p>
+<p><strong>Bottom-left</strong> Selects Motion Estimation</p>
+<p><strong>Bottom-centre</strong> Selects Edge Detection</p>
+<p><strong>Bottom-right</strong> Selects Particle Repulsion</p>
+<p><strong>Top-left</strong> Selects Face Detection</p>
+<p><strong>Top-centre</strong> Selects Mandelbrot</p>
+<p><strong>Top-right</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode). Pressing any other region runs the selected algorithm in vector mode.</p>
 </div>
 </div>
 </div>
