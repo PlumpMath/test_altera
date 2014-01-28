@@ -40,7 +40,7 @@
 VBXCOPYRIGHT( test_mtx_xp )
 
 /*
- * Matrix Transpose - Scalar NIOS version and VECTOR version
+ * Matrix Transpose - Scalar version and Vector version
  */
 
 #include <stdio.h>

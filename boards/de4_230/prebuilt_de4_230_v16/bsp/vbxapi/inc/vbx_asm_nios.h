@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup VBX_ASM
+ * @defgroup VBX_ASM VBX Assembly Macros
  * @brief VBX ASM Macros
  *
  * @ingroup VBXapi 

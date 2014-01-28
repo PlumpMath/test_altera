@@ -36,7 +36,7 @@
  */
 
 /**
- * @defgroup VBXware 
+ * @defgroup VBXware VBXware
  * @brief Optimized routines for common functions
  */
 

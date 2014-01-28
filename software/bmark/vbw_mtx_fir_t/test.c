@@ -39,11 +39,6 @@
 #include "vbx_copyright.h"
 VBXCOPYRIGHT( test_mtx_fir )
 
-/*
-  Copy
-  Scalar NIOS version and VECTOR version
-*/
-
 #include <stdio.h>
 #include "vbx.h"
 #include "vbx_test.h"

@@ -960,12 +960,7 @@ int main(void)
 {
 
 #ifdef DEMO
-#if defined(SYSTEM_ZEDBOARD) && !defined(__MICROBLAZE__)
-	// pFrameTPad = buffer; // remap_uncached not implemented yet for ARM.
 	pFrameTPad = (pixel*)vbx_remap_uncached(buffer);  // force uncached
-#else
-	pFrameTPad = (pixel*)vbx_remap_uncached(buffer);  // force uncached
-#endif
 #endif
 
 	//unsigned int time_start, time_stop;

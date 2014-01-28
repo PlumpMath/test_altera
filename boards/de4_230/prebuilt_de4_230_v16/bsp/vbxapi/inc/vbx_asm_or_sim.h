@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup VBX_ASM_or_sim
+ * @defgroup VBX_ASM_or_sim VBX_ASM_or_sim
  * @brief Included proper headers depending if running simulator or not
  *
  * @ingroup VBXapi

@@ -40,7 +40,7 @@
 VBXCOPYRIGHT( test_vec_add )
 
 /*
- * Vector Add - Scalar NIOS version and VECTOR version
+ * Vector Add - Scalar version and Vector version
  */
 
 #include <stdio.h>

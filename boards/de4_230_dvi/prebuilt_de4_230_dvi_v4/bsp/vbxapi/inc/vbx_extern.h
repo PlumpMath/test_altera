@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup VBX_extern
+ * @defgroup VBX_extern VBX extern
  * @brief VBX Extern
  *
  * @ingroup VBXapi 

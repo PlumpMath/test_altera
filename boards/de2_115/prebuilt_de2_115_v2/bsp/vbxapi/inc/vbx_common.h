@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup vbx_common
+ * @defgroup vbx_common vbx common
  * @brief vbx common
  *
  * @ingroup vbxapi

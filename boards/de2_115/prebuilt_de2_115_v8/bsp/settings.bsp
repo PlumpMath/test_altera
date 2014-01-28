@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>14-Jan-2014 5:37:41 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1389749861930</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>27-Jan-2014 8:14:45 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1390882485545</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
         <BspSettingsFile>software/lib/bsp/settings.bsp</BspSettingsFile>
         <SopcDesignFile>../vblox1.sopcinfo</SopcDesignFile>
@@ -931,12 +931,6 @@
         <MemoryMap>
                 <slaveDescriptor>av_i2c_clk_pio</slaveDescriptor>
                 <addressRange>0x08840970 - 0x0884097F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>frame_writer_0</slaveDescriptor>
-                <addressRange>0x08840980 - 0x0884098F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

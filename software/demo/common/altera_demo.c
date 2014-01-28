@@ -228,6 +228,7 @@ void frame_writer_init(demo_t *pDemo)
 }
 #endif
 
+#if defined(__FRAME_WRITER) || defined(__STREAM_WRITER)
 void frame_writer_isr(void *isr_context)
 {
 	demo_t *pDemo = (demo_t *)isr_context;
@@ -265,6 +266,7 @@ void frame_writer_isr(void *isr_context)
 #endif
 	alt_ic_irq_enable(0, FRAME_WRITER_0_IRQ);
 }
+#endif // defined(__FRAME_WRITER) || defined(__STREAM_WRITER)
 
 #if defined(__STREAM_WRITER) && HANDLE_CTI_CTRL_PKTS
 ///////////////////////////////////////////////////////////////////////////
@@ -382,7 +384,9 @@ vbx_timestamp_t switch_buffers(demo_t* pDemo)
 	}
 
 	//Move buffer pointers
+#if defined(__FRAME_WRITER) || defined(__STREAM_WRITER)
 	alt_ic_irq_disable(0, FRAME_WRITER_0_IRQ);
+#endif
 	temp = pDemo->buffer[BUFFER_READING];
 	pDemo->buffer[BUFFER_READING] = pDemo->buffer[BUFFER_PROCESSING];
 	pDemo->buffer[BUFFER_PROCESSING] = pDemo->buffer[BUFFER_READY];
@@ -390,7 +394,9 @@ vbx_timestamp_t switch_buffers(demo_t* pDemo)
 #if !SYSTEM_DE2_115
 	pDemo->frame_ready = 0;
 #endif
+#if defined(__FRAME_WRITER) || defined(__STREAM_WRITER)
 	alt_ic_irq_enable(0, FRAME_WRITER_0_IRQ);
+#endif
 
 	//Update pointer to processing display
 	pDisplay->buffer_ptrs[0]->buffer = pDemo->buffer[BUFFER_PROCESSING];

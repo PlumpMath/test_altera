@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup VBX_macros
+ * @defgroup VBX_macros VBX Macros
  * @brief VBX macros
  *
  * @ingroup VBXapi

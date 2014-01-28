@@ -133,7 +133,9 @@ void stream_writer_init(demo_t *pDemo);
 void frame_writer_init(demo_t *pDemo);
 #endif
 
+#if defined(__FRAME_WRITER) || defined(__STREAM_WRITER)
 void frame_writer_isr(void *isr_context);
+#endif
 
 #if defined(__STREAM_WRITER) && HANDLE_CTI_CTRL_PKTS
 ///////////////////////////////////////////////////////////////////////////

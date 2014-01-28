@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup Sobel
+ * @defgroup Sobel Sobel
  * @brief Sobel
  * @ingroup VBXware
  */

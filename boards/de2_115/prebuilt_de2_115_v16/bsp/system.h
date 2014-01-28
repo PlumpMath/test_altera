@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'vblox1'
  * SOPC Builder design path: ../../../vblox1.sopcinfo
  *
- * Generated: Tue Jan 14 17:37:39 PST 2014
+ * Generated: Mon Jan 27 20:14:47 PST 2014
  */
 
 /*
@@ -146,7 +146,6 @@
 #define __ALTPLL
 #define __ALT_VIP_VFR
 #define __AUDIO_AVALON_CONTROLLER
-#define __FRAME_WRITER
 #define __VECTORBLOX_MXP
 #define __VECTORBLOX_NCS_SHIM
 
@@ -300,20 +299,6 @@
 #define CFI_FLASH_TIMING_UNITS "ns"
 #define CFI_FLASH_TYPE "altera_generic_tristate_controller"
 #define CFI_FLASH_WAIT_VALUE 160
-
-
-/*
- * frame_writer_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_frame_writer_0 frame_writer
-#define FRAME_WRITER_0_BASE 0x8840980
-#define FRAME_WRITER_0_IRQ 7
-#define FRAME_WRITER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define FRAME_WRITER_0_NAME "/dev/frame_writer_0"
-#define FRAME_WRITER_0_SPAN 16
-#define FRAME_WRITER_0_TYPE "frame_writer"
 
 
 /*

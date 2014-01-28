@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup VectorBlox_MXP
+ * @defgroup VectorBlox_MXP VectorBlox MXP
  * @brief Details the instance of our VectorBlox MXP processor
  *
  * @ingroup VBXapi

@@ -40,7 +40,7 @@
 VBXCOPYRIGHT( test_vec_fir )
 
 /*
- * Finite Impulse Response Filter - Scalar NIOS version and VECTOR version
+ * Finite Impulse Response Filter - Scalar version and Vector version
  */
 
 #include <stdio.h>

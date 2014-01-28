@@ -39,11 +39,6 @@
 #include "vbx_copyright.h"
 VBXCOPYRIGHT( test_libfix_math )
 
-/*
-  Copy
-  Scalar NIOS version and VECTOR version
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "vbx.h"

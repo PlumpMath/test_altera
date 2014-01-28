@@ -3170,7 +3170,7 @@ static inline void vbx_VVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t *v_
 	}
 }
 
-static inline void vbx_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3257,7 +3257,7 @@ static inline void vbx_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byt
 	}
 }
 
-static inline void vbx_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3344,7 +3344,7 @@ static inline void vbx_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_by
 	}
 }
 
-static inline void vbx_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3431,7 +3431,7 @@ static inline void vbx_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_by
 	}
 }
 
-static inline void vbx_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3518,7 +3518,7 @@ static inline void vbx_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_b
 	}
 }
 
-static inline void vbx_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3605,7 +3605,7 @@ static inline void vbx_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_i
 	}
 }
 
-static inline void vbx_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3692,7 +3692,7 @@ static inline void vbx_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3779,7 +3779,7 @@ static inline void vbx_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_by
 	}
 }
 
-static inline void vbx_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3866,7 +3866,7 @@ static inline void vbx_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_b
 	}
 }
 
-static inline void vbx_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -3953,7 +3953,7 @@ static inline void vbx_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4040,7 +4040,7 @@ static inline void vbx_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_by
 	}
 }
 
-static inline void vbx_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_SVBWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4127,7 +4127,7 @@ static inline void vbx_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_b
 	}
 }
 
-static inline void vbx_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4214,7 +4214,7 @@ static inline void vbx_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4301,7 +4301,7 @@ static inline void vbx_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_ha
 	}
 }
 
-static inline void vbx_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4388,7 +4388,7 @@ static inline void vbx_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_h
 	}
 }
 
-static inline void vbx_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4475,7 +4475,7 @@ static inline void vbx_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4562,7 +4562,7 @@ static inline void vbx_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_hal
 	}
 }
 
-static inline void vbx_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4649,7 +4649,7 @@ static inline void vbx_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_ha
 	}
 }
 
-static inline void vbx_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4736,7 +4736,7 @@ static inline void vbx_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_ha
 	}
 }
 
-static inline void vbx_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4823,7 +4823,7 @@ static inline void vbx_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_h
 	}
 }
 
-static inline void vbx_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4910,7 +4910,7 @@ static inline void vbx_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_i
 	}
 }
 
-static inline void vbx_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -4997,7 +4997,7 @@ static inline void vbx_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5084,7 +5084,7 @@ static inline void vbx_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_ha
 	}
 }
 
-static inline void vbx_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_SVHWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5171,7 +5171,7 @@ static inline void vbx_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_h
 	}
 }
 
-static inline void vbx_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5258,7 +5258,7 @@ static inline void vbx_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5345,7 +5345,7 @@ static inline void vbx_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_wo
 	}
 }
 
-static inline void vbx_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5432,7 +5432,7 @@ static inline void vbx_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_w
 	}
 }
 
-static inline void vbx_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5519,7 +5519,7 @@ static inline void vbx_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5606,7 +5606,7 @@ static inline void vbx_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_wo
 	}
 }
 
-static inline void vbx_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5693,7 +5693,7 @@ static inline void vbx_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_w
 	}
 }
 
-static inline void vbx_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5780,7 +5780,7 @@ static inline void vbx_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5867,7 +5867,7 @@ static inline void vbx_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_wor
 	}
 }
 
-static inline void vbx_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -5954,7 +5954,7 @@ static inline void vbx_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_wo
 	}
 }
 
-static inline void vbx_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -6041,7 +6041,7 @@ static inline void vbx_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_wo
 	}
 }
 
-static inline void vbx_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_SVWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -6128,7 +6128,7 @@ static inline void vbx_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_w
 	}
 }
 
-static inline void vbx_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_SVWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -6215,7 +6215,7 @@ static inline void vbx_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_i
 	}
 }
 
-static inline void vbx_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -7868,7 +7868,7 @@ static inline void vbx_VEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t *v_
 	}
 }
 
-static inline void vbx_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -7955,7 +7955,7 @@ static inline void vbx_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enu
 	}
 }
 
-static inline void vbx_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8042,7 +8042,7 @@ static inline void vbx_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_en
 	}
 }
 
-static inline void vbx_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8129,7 +8129,7 @@ static inline void vbx_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_en
 	}
 }
 
-static inline void vbx_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8216,7 +8216,7 @@ static inline void vbx_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_e
 	}
 }
 
-static inline void vbx_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8303,7 +8303,7 @@ static inline void vbx_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_i
 	}
 }
 
-static inline void vbx_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8390,7 +8390,7 @@ static inline void vbx_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8477,7 +8477,7 @@ static inline void vbx_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enu
 	}
 }
 
-static inline void vbx_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8564,7 +8564,7 @@ static inline void vbx_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_en
 	}
 }
 
-static inline void vbx_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8651,7 +8651,7 @@ static inline void vbx_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_en
 	}
 }
 
-static inline void vbx_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8738,7 +8738,7 @@ static inline void vbx_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_e
 	}
 }
 
-static inline void vbx_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8825,7 +8825,7 @@ static inline void vbx_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_i
 	}
 }
 
-static inline void vbx_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8912,7 +8912,7 @@ static inline void vbx_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_
 	}
 }
 
-static inline void vbx_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -8999,7 +8999,7 @@ static inline void vbx_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enu
 	}
 }
 
-static inline void vbx_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -9086,7 +9086,7 @@ static inline void vbx_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_en
 	}
 }
 
-static inline void vbx_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -9173,7 +9173,7 @@ static inline void vbx_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_en
 	}
 }
 
-static inline void vbx_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -9260,7 +9260,7 @@ static inline void vbx_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_e
 	}
 }
 
-static inline void vbx_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -9347,7 +9347,7 @@ static inline void vbx_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_i
 	}
 }
 
-static inline void vbx_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -12566,7 +12566,7 @@ static inline void vbx_acc_VVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t
 	}
 }
 
-static inline void vbx_acc_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -12653,7 +12653,7 @@ static inline void vbx_acc_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_acc_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -12740,7 +12740,7 @@ static inline void vbx_acc_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -12827,7 +12827,7 @@ static inline void vbx_acc_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -12914,7 +12914,7 @@ static inline void vbx_acc_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13001,7 +13001,7 @@ static inline void vbx_acc_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_acc_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13088,7 +13088,7 @@ static inline void vbx_acc_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13175,7 +13175,7 @@ static inline void vbx_acc_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13262,7 +13262,7 @@ static inline void vbx_acc_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13349,7 +13349,7 @@ static inline void vbx_acc_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13436,7 +13436,7 @@ static inline void vbx_acc_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_SVBWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13523,7 +13523,7 @@ static inline void vbx_acc_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13610,7 +13610,7 @@ static inline void vbx_acc_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13697,7 +13697,7 @@ static inline void vbx_acc_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13784,7 +13784,7 @@ static inline void vbx_acc_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13871,7 +13871,7 @@ static inline void vbx_acc_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -13958,7 +13958,7 @@ static inline void vbx_acc_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_acc_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14045,7 +14045,7 @@ static inline void vbx_acc_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14132,7 +14132,7 @@ static inline void vbx_acc_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14219,7 +14219,7 @@ static inline void vbx_acc_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14306,7 +14306,7 @@ static inline void vbx_acc_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_acc_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14393,7 +14393,7 @@ static inline void vbx_acc_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14480,7 +14480,7 @@ static inline void vbx_acc_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_SVHWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14567,7 +14567,7 @@ static inline void vbx_acc_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14654,7 +14654,7 @@ static inline void vbx_acc_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14741,7 +14741,7 @@ static inline void vbx_acc_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14828,7 +14828,7 @@ static inline void vbx_acc_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -14915,7 +14915,7 @@ static inline void vbx_acc_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15002,7 +15002,7 @@ static inline void vbx_acc_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15089,7 +15089,7 @@ static inline void vbx_acc_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15176,7 +15176,7 @@ static inline void vbx_acc_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15263,7 +15263,7 @@ static inline void vbx_acc_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_acc_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15350,7 +15350,7 @@ static inline void vbx_acc_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15437,7 +15437,7 @@ static inline void vbx_acc_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_SVWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15524,7 +15524,7 @@ static inline void vbx_acc_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_SVWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -15611,7 +15611,7 @@ static inline void vbx_acc_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_acc_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -17264,7 +17264,7 @@ static inline void vbx_acc_VEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t
 	}
 }
 
-static inline void vbx_acc_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17351,7 +17351,7 @@ static inline void vbx_acc_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_acc_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17438,7 +17438,7 @@ static inline void vbx_acc_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17525,7 +17525,7 @@ static inline void vbx_acc_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17612,7 +17612,7 @@ static inline void vbx_acc_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17699,7 +17699,7 @@ static inline void vbx_acc_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_acc_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17786,7 +17786,7 @@ static inline void vbx_acc_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17873,7 +17873,7 @@ static inline void vbx_acc_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_acc_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -17960,7 +17960,7 @@ static inline void vbx_acc_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18047,7 +18047,7 @@ static inline void vbx_acc_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18134,7 +18134,7 @@ static inline void vbx_acc_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18221,7 +18221,7 @@ static inline void vbx_acc_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_acc_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18308,7 +18308,7 @@ static inline void vbx_acc_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned in
 	}
 }
 
-static inline void vbx_acc_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18395,7 +18395,7 @@ static inline void vbx_acc_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_acc_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18482,7 +18482,7 @@ static inline void vbx_acc_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18569,7 +18569,7 @@ static inline void vbx_acc_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_acc_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18656,7 +18656,7 @@ static inline void vbx_acc_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, v
 	}
 }
 
-static inline void vbx_acc_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -18743,7 +18743,7 @@ static inline void vbx_acc_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_acc_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -21962,7 +21962,7 @@ static inline void vbx_2D_VVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t 
 	}
 }
 
-static inline void vbx_2D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22049,7 +22049,7 @@ static inline void vbx_2D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_2D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22136,7 +22136,7 @@ static inline void vbx_2D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22223,7 +22223,7 @@ static inline void vbx_2D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22310,7 +22310,7 @@ static inline void vbx_2D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_2D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22397,7 +22397,7 @@ static inline void vbx_2D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_2D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_2D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22484,7 +22484,7 @@ static inline void vbx_2D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22571,7 +22571,7 @@ static inline void vbx_2D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22658,7 +22658,7 @@ static inline void vbx_2D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_2D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22745,7 +22745,7 @@ static inline void vbx_2D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22832,7 +22832,7 @@ static inline void vbx_2D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_2D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -22919,7 +22919,7 @@ static inline void vbx_2D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_2D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23006,7 +23006,7 @@ static inline void vbx_2D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23093,7 +23093,7 @@ static inline void vbx_2D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23180,7 +23180,7 @@ static inline void vbx_2D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_2D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23267,7 +23267,7 @@ static inline void vbx_2D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23354,7 +23354,7 @@ static inline void vbx_2D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_2D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23441,7 +23441,7 @@ static inline void vbx_2D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23528,7 +23528,7 @@ static inline void vbx_2D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23615,7 +23615,7 @@ static inline void vbx_2D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_2D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23702,7 +23702,7 @@ static inline void vbx_2D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_2D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_2D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23789,7 +23789,7 @@ static inline void vbx_2D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23876,7 +23876,7 @@ static inline void vbx_2D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_2D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -23963,7 +23963,7 @@ static inline void vbx_2D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_2D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24050,7 +24050,7 @@ static inline void vbx_2D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24137,7 +24137,7 @@ static inline void vbx_2D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24224,7 +24224,7 @@ static inline void vbx_2D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_2D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24311,7 +24311,7 @@ static inline void vbx_2D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24398,7 +24398,7 @@ static inline void vbx_2D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24485,7 +24485,7 @@ static inline void vbx_2D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_2D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24572,7 +24572,7 @@ static inline void vbx_2D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24659,7 +24659,7 @@ static inline void vbx_2D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_2D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24746,7 +24746,7 @@ static inline void vbx_2D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24833,7 +24833,7 @@ static inline void vbx_2D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_2D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -24920,7 +24920,7 @@ static inline void vbx_2D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_2D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -25007,7 +25007,7 @@ static inline void vbx_2D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_2D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_2D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -26660,7 +26660,7 @@ static inline void vbx_2D_VEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t 
 	}
 }
 
-static inline void vbx_2D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -26747,7 +26747,7 @@ static inline void vbx_2D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_2D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -26834,7 +26834,7 @@ static inline void vbx_2D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -26921,7 +26921,7 @@ static inline void vbx_2D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27008,7 +27008,7 @@ static inline void vbx_2D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27095,7 +27095,7 @@ static inline void vbx_2D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_2D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27182,7 +27182,7 @@ static inline void vbx_2D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27269,7 +27269,7 @@ static inline void vbx_2D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_2D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27356,7 +27356,7 @@ static inline void vbx_2D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27443,7 +27443,7 @@ static inline void vbx_2D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27530,7 +27530,7 @@ static inline void vbx_2D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27617,7 +27617,7 @@ static inline void vbx_2D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_2D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27704,7 +27704,7 @@ static inline void vbx_2D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_2D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27791,7 +27791,7 @@ static inline void vbx_2D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_2D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27878,7 +27878,7 @@ static inline void vbx_2D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -27965,7 +27965,7 @@ static inline void vbx_2D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_2D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -28052,7 +28052,7 @@ static inline void vbx_2D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_2D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -28139,7 +28139,7 @@ static inline void vbx_2D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_2D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_2D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -31358,7 +31358,7 @@ static inline void vbx_acc_2D_VVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uwor
 	}
 }
 
-static inline void vbx_acc_2D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31445,7 +31445,7 @@ static inline void vbx_acc_2D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_2D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31532,7 +31532,7 @@ static inline void vbx_acc_2D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31619,7 +31619,7 @@ static inline void vbx_acc_2D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31706,7 +31706,7 @@ static inline void vbx_acc_2D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_2D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31793,7 +31793,7 @@ static inline void vbx_acc_2D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_2D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_2D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31880,7 +31880,7 @@ static inline void vbx_acc_2D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -31967,7 +31967,7 @@ static inline void vbx_acc_2D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32054,7 +32054,7 @@ static inline void vbx_acc_2D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_2D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32141,7 +32141,7 @@ static inline void vbx_acc_2D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32228,7 +32228,7 @@ static inline void vbx_acc_2D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_2D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32315,7 +32315,7 @@ static inline void vbx_acc_2D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_2D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32402,7 +32402,7 @@ static inline void vbx_acc_2D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32489,7 +32489,7 @@ static inline void vbx_acc_2D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32576,7 +32576,7 @@ static inline void vbx_acc_2D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_2D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32663,7 +32663,7 @@ static inline void vbx_acc_2D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32750,7 +32750,7 @@ static inline void vbx_acc_2D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_2D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32837,7 +32837,7 @@ static inline void vbx_acc_2D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -32924,7 +32924,7 @@ static inline void vbx_acc_2D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33011,7 +33011,7 @@ static inline void vbx_acc_2D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_2D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33098,7 +33098,7 @@ static inline void vbx_acc_2D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_2D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_2D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33185,7 +33185,7 @@ static inline void vbx_acc_2D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33272,7 +33272,7 @@ static inline void vbx_acc_2D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_2D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33359,7 +33359,7 @@ static inline void vbx_acc_2D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_2D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33446,7 +33446,7 @@ static inline void vbx_acc_2D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33533,7 +33533,7 @@ static inline void vbx_acc_2D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33620,7 +33620,7 @@ static inline void vbx_acc_2D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_2D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33707,7 +33707,7 @@ static inline void vbx_acc_2D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33794,7 +33794,7 @@ static inline void vbx_acc_2D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33881,7 +33881,7 @@ static inline void vbx_acc_2D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_2D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -33968,7 +33968,7 @@ static inline void vbx_acc_2D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -34055,7 +34055,7 @@ static inline void vbx_acc_2D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_2D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -34142,7 +34142,7 @@ static inline void vbx_acc_2D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -34229,7 +34229,7 @@ static inline void vbx_acc_2D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_2D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -34316,7 +34316,7 @@ static inline void vbx_acc_2D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_2D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -34403,7 +34403,7 @@ static inline void vbx_acc_2D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_2D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_2D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -36056,7 +36056,7 @@ static inline void vbx_acc_2D_VEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uwor
 	}
 }
 
-static inline void vbx_acc_2D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36143,7 +36143,7 @@ static inline void vbx_acc_2D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_2D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36230,7 +36230,7 @@ static inline void vbx_acc_2D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36317,7 +36317,7 @@ static inline void vbx_acc_2D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36404,7 +36404,7 @@ static inline void vbx_acc_2D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36491,7 +36491,7 @@ static inline void vbx_acc_2D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_2D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36578,7 +36578,7 @@ static inline void vbx_acc_2D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36665,7 +36665,7 @@ static inline void vbx_acc_2D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_2D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36752,7 +36752,7 @@ static inline void vbx_acc_2D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36839,7 +36839,7 @@ static inline void vbx_acc_2D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -36926,7 +36926,7 @@ static inline void vbx_acc_2D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37013,7 +37013,7 @@ static inline void vbx_acc_2D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_2D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37100,7 +37100,7 @@ static inline void vbx_acc_2D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_2D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37187,7 +37187,7 @@ static inline void vbx_acc_2D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_2D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37274,7 +37274,7 @@ static inline void vbx_acc_2D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37361,7 +37361,7 @@ static inline void vbx_acc_2D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_2D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37448,7 +37448,7 @@ static inline void vbx_acc_2D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_2D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -37535,7 +37535,7 @@ static inline void vbx_acc_2D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_2D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_2D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -40754,7 +40754,7 @@ static inline void vbx_3D_VVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t 
 	}
 }
 
-static inline void vbx_3D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -40841,7 +40841,7 @@ static inline void vbx_3D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_3D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -40928,7 +40928,7 @@ static inline void vbx_3D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41015,7 +41015,7 @@ static inline void vbx_3D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41102,7 +41102,7 @@ static inline void vbx_3D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_3D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41189,7 +41189,7 @@ static inline void vbx_3D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_3D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_3D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41276,7 +41276,7 @@ static inline void vbx_3D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41363,7 +41363,7 @@ static inline void vbx_3D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41450,7 +41450,7 @@ static inline void vbx_3D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_3D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41537,7 +41537,7 @@ static inline void vbx_3D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41624,7 +41624,7 @@ static inline void vbx_3D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_3D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41711,7 +41711,7 @@ static inline void vbx_3D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_3D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41798,7 +41798,7 @@ static inline void vbx_3D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41885,7 +41885,7 @@ static inline void vbx_3D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -41972,7 +41972,7 @@ static inline void vbx_3D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_3D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42059,7 +42059,7 @@ static inline void vbx_3D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42146,7 +42146,7 @@ static inline void vbx_3D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_3D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42233,7 +42233,7 @@ static inline void vbx_3D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42320,7 +42320,7 @@ static inline void vbx_3D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42407,7 +42407,7 @@ static inline void vbx_3D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_3D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42494,7 +42494,7 @@ static inline void vbx_3D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_3D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_3D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42581,7 +42581,7 @@ static inline void vbx_3D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42668,7 +42668,7 @@ static inline void vbx_3D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_3D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42755,7 +42755,7 @@ static inline void vbx_3D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_3D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42842,7 +42842,7 @@ static inline void vbx_3D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -42929,7 +42929,7 @@ static inline void vbx_3D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43016,7 +43016,7 @@ static inline void vbx_3D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_3D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43103,7 +43103,7 @@ static inline void vbx_3D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43190,7 +43190,7 @@ static inline void vbx_3D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43277,7 +43277,7 @@ static inline void vbx_3D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_3D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43364,7 +43364,7 @@ static inline void vbx_3D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43451,7 +43451,7 @@ static inline void vbx_3D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_3D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43538,7 +43538,7 @@ static inline void vbx_3D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43625,7 +43625,7 @@ static inline void vbx_3D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_3D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43712,7 +43712,7 @@ static inline void vbx_3D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_3D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -43799,7 +43799,7 @@ static inline void vbx_3D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_3D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_3D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -45452,7 +45452,7 @@ static inline void vbx_3D_VEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t 
 	}
 }
 
-static inline void vbx_3D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -45539,7 +45539,7 @@ static inline void vbx_3D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_3D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -45626,7 +45626,7 @@ static inline void vbx_3D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -45713,7 +45713,7 @@ static inline void vbx_3D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -45800,7 +45800,7 @@ static inline void vbx_3D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -45887,7 +45887,7 @@ static inline void vbx_3D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_3D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -45974,7 +45974,7 @@ static inline void vbx_3D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46061,7 +46061,7 @@ static inline void vbx_3D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_3D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46148,7 +46148,7 @@ static inline void vbx_3D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46235,7 +46235,7 @@ static inline void vbx_3D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46322,7 +46322,7 @@ static inline void vbx_3D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46409,7 +46409,7 @@ static inline void vbx_3D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_3D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46496,7 +46496,7 @@ static inline void vbx_3D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int
 	}
 }
 
-static inline void vbx_3D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46583,7 +46583,7 @@ static inline void vbx_3D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_
 	}
 }
 
-static inline void vbx_3D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46670,7 +46670,7 @@ static inline void vbx_3D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46757,7 +46757,7 @@ static inline void vbx_3D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx
 	}
 }
 
-static inline void vbx_3D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46844,7 +46844,7 @@ static inline void vbx_3D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vb
 	}
 }
 
-static inline void vbx_3D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -46931,7 +46931,7 @@ static inline void vbx_3D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int 
 	}
 }
 
-static inline void vbx_3D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_3D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -50150,7 +50150,7 @@ static inline void vbx_acc_3D_VVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uwor
 	}
 }
 
-static inline void vbx_acc_3D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50237,7 +50237,7 @@ static inline void vbx_acc_3D_SVB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_3D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50324,7 +50324,7 @@ static inline void vbx_acc_3D_SVBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50411,7 +50411,7 @@ static inline void vbx_acc_3D_SVBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50498,7 +50498,7 @@ static inline void vbx_acc_3D_SVBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_3D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50585,7 +50585,7 @@ static inline void vbx_acc_3D_SVBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_3D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_3D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50672,7 +50672,7 @@ static inline void vbx_acc_3D_SVBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50759,7 +50759,7 @@ static inline void vbx_acc_3D_SVBH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50846,7 +50846,7 @@ static inline void vbx_acc_3D_SVBHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_3D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -50933,7 +50933,7 @@ static inline void vbx_acc_3D_SVBHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51020,7 +51020,7 @@ static inline void vbx_acc_3D_SVBW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_byte_t *v_in2 )
+static inline void vbx_acc_3D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_byte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51107,7 +51107,7 @@ static inline void vbx_acc_3D_SVBWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_ubyte_t *v_in2 )
+static inline void vbx_acc_3D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_ubyte_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51194,7 +51194,7 @@ static inline void vbx_acc_3D_SVBWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51281,7 +51281,7 @@ static inline void vbx_acc_3D_SVHB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51368,7 +51368,7 @@ static inline void vbx_acc_3D_SVHBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_3D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51455,7 +51455,7 @@ static inline void vbx_acc_3D_SVHBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51542,7 +51542,7 @@ static inline void vbx_acc_3D_SVH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_3D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51629,7 +51629,7 @@ static inline void vbx_acc_3D_SVHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51716,7 +51716,7 @@ static inline void vbx_acc_3D_SVHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51803,7 +51803,7 @@ static inline void vbx_acc_3D_SVHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_3D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51890,7 +51890,7 @@ static inline void vbx_acc_3D_SVHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_3D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_3D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -51977,7 +51977,7 @@ static inline void vbx_acc_3D_SVHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52064,7 +52064,7 @@ static inline void vbx_acc_3D_SVHW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_half_t *v_in2 )
+static inline void vbx_acc_3D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_half_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52151,7 +52151,7 @@ static inline void vbx_acc_3D_SVHWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uhalf_t *v_in2 )
+static inline void vbx_acc_3D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uhalf_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52238,7 +52238,7 @@ static inline void vbx_acc_3D_SVHWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52325,7 +52325,7 @@ static inline void vbx_acc_3D_SVWB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52412,7 +52412,7 @@ static inline void vbx_acc_3D_SVWBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_3D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52499,7 +52499,7 @@ static inline void vbx_acc_3D_SVWBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52586,7 +52586,7 @@ static inline void vbx_acc_3D_SVWH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52673,7 +52673,7 @@ static inline void vbx_acc_3D_SVWHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_3D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52760,7 +52760,7 @@ static inline void vbx_acc_3D_SVWHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52847,7 +52847,7 @@ static inline void vbx_acc_3D_SVW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_3D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -52934,7 +52934,7 @@ static inline void vbx_acc_3D_SVWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -53021,7 +53021,7 @@ static inline void vbx_acc_3D_SVWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_word_t *v_in2 )
+static inline void vbx_acc_3D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_word_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -53108,7 +53108,7 @@ static inline void vbx_acc_3D_SVWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_3D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -53195,7 +53195,7 @@ static inline void vbx_acc_3D_SVWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_3D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_uword_t *v_in2 )
+static inline void vbx_acc_3D_SVWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_uword_t *v_in2 )
 {
 	switch(v_op)
 	{
@@ -54848,7 +54848,7 @@ static inline void vbx_acc_3D_VEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uwor
 	}
 }
 
-static inline void vbx_acc_3D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -54935,7 +54935,7 @@ static inline void vbx_acc_3D_SEB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_3D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55022,7 +55022,7 @@ static inline void vbx_acc_3D_SEBB( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55109,7 +55109,7 @@ static inline void vbx_acc_3D_SEBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55196,7 +55196,7 @@ static inline void vbx_acc_3D_SEBBS( vinstr_t v_op, vbx_byte_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55283,7 +55283,7 @@ static inline void vbx_acc_3D_SEBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_3D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55370,7 +55370,7 @@ static inline void vbx_acc_3D_SEBBU( vinstr_t v_op, vbx_ubyte_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55457,7 +55457,7 @@ static inline void vbx_acc_3D_SEH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_3D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEHH( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55544,7 +55544,7 @@ static inline void vbx_acc_3D_SEHH( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55631,7 +55631,7 @@ static inline void vbx_acc_3D_SEHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55718,7 +55718,7 @@ static inline void vbx_acc_3D_SEHHS( vinstr_t v_op, vbx_half_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55805,7 +55805,7 @@ static inline void vbx_acc_3D_SEHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_3D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55892,7 +55892,7 @@ static inline void vbx_acc_3D_SEHHU( vinstr_t v_op, vbx_uhalf_t *v_out, unsigned
 	}
 }
 
-static inline void vbx_acc_3D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -55979,7 +55979,7 @@ static inline void vbx_acc_3D_SEW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, 
 	}
 }
 
-static inline void vbx_acc_3D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEWW( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -56066,7 +56066,7 @@ static inline void vbx_acc_3D_SEWW( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -56153,7 +56153,7 @@ static inline void vbx_acc_3D_SEWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1,
 	}
 }
 
-static inline void vbx_acc_3D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, vbx_word_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -56240,7 +56240,7 @@ static inline void vbx_acc_3D_SEWWS( vinstr_t v_op, vbx_word_t *v_out, int s_in1
 	}
 }
 
-static inline void vbx_acc_3D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{
@@ -56327,7 +56327,7 @@ static inline void vbx_acc_3D_SEWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned 
 	}
 }
 
-static inline void vbx_acc_3D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, unsigned int s_in1, vbx_enum_t *v_enum )
+static inline void vbx_acc_3D_SEWWU( vinstr_t v_op, vbx_uword_t *v_out, vbx_uword_t s_in1, vbx_enum_t *v_enum )
 {
 	switch(v_op)
 	{

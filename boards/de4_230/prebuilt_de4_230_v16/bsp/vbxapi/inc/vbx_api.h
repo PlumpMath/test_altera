@@ -35,13 +35,10 @@
  *
  */
 
-/**
- * @defgroup VBXapi
- * @brief VBX API library
- */
+
 /**
  * @file
- * @defgroup VBX_API
+ * @defgroup VBX_API VBX API
  * @brief VBX API
  *
  * @ingroup VBXapi

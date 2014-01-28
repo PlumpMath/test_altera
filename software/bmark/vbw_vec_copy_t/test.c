@@ -40,8 +40,7 @@
 VBXCOPYRIGHT( test_vec_copy )
 
 /*
-  Copy
-  Scalar NIOS version and VECTOR version
+  Vector Copy - Scalar version and Vector version
 */
 
 #include <stdio.h>

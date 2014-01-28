@@ -48,9 +48,6 @@ VBXCOPYRIGHT( test_dma_bandwidth )
 #include "vbx_test.h"
 
 ///////////////////////////////////////////////////////////////////////////
-#define ALIGNED 1
-
-///////////////////////////////////////////////////////////////////////////
 void print_dma_bandwidth(vbx_timestamp_t time_start,
                          vbx_timestamp_t time_stop,
                          int bytes,
@@ -121,22 +118,14 @@ int dma_bandwidth_test()
 			if (to_host) {
 				time_start = vbx_timestamp();
 				for (i = 0; i < num_iter; i++) {
-#if ALIGNED
-					vbx_dma_to_host_aligned(buf, v_buf, len);
-#else
 					vbx_dma_to_host(buf, v_buf, len);
-#endif
 				}
 				vbx_sync();
 				time_stop = vbx_timestamp();
 			} else {
 				time_start = vbx_timestamp();
 				for (i = 0; i < num_iter; i++) {
-#if ALIGNED
-					vbx_dma_to_vector_aligned(v_buf, buf, len);
-#else
 					vbx_dma_to_vector(v_buf, buf, len);
-#endif
 				}
 				vbx_sync();
 				time_stop = vbx_timestamp();

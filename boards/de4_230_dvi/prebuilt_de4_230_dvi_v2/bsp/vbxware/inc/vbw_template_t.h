@@ -36,13 +36,13 @@
  */
 
 /**
- * @defgroup Template
+ * @defgroup Template Template
  * @brief Template system for C
  * @ingroup VBXware 
  */
 /**
  * @file
- * @defgroup Template_header
+ * @defgroup Template_header Template header
  * @brief Template header
  * @ingroup Template 
  */

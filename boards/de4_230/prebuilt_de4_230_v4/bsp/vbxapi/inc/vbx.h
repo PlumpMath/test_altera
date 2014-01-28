@@ -37,7 +37,7 @@
 
 /**
  * @file
- * @defgroup VBX
+ * @defgroup VBX Main include file
  * @brief Main file to include in programs
  *
  * @ingroup VBXapi

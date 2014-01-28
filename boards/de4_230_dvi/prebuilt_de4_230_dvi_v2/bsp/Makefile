@@ -346,6 +346,7 @@ vectorblox_vbxware_package_C_LIB_SRCS := \
 	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_vec_add_t.c \
 	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_vec_add_all.c \
 	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_vec_rev.c \
+	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_mtx_median_argb32.c \
 	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_mtx_fir_t.c \
 	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_vec_fir_all.c \
 	$(vectorblox_vbxware_package_SRCS_ROOT)/src/vbw_mtx_median_all.c \
