@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>VectorBlox MXP Quickstart for Altera</title>
+  <style type="text/css">code{white-space: pre;}</style>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+<link type="text/css" rel="stylesheet" href="css/jquery.ui.all.css"/>
+<link type="text/css" rel="stylesheet" href="css/jquery.tocify.css"/>
+<style>
+body {
+    padding-top: 20px;
+}
+p {
+    font-size: 16px;
+}
+.headerDoc {
+    color: #005580;
+}
+
+@media (max-width: 767px) {
+    #toc {
+        position: relative;
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span3">
+<div id="toc"></div>
+</div>
+<div class="span9">
+<div id="header">
+<h1 class="title">VectorBlox MXP Quickstart for Altera</h1>
+</div>
+<h1 id="quickstart_install"><span class="header-section-number">1</span> Installation</h1>
+<p>This guide describes installing VectorBlox MXP to run with Qsys and the Altera Nios II Embedded Design Suite (EDS).</p>
+<h2 id="installation_prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h2>
+<p>Before you begin, make sure you have:</p>
+<ul>
+<li><p>Altera Quartus II, version 11.0 or later. Download it from <a href="http://www.altera.com/download/dnl-index.jsp">Altera</a>.</p></li>
+<li><p><strong>For releases containing the SDK and hardware IP:</strong> The VectorBlox MXP Software Development Kit (SDK) and MXP IP core (with license file), provided as a PGP-encrypted <code>.tar.gz</code> file.</p></li>
+<li><p><strong>For releases containing only the SDK:</strong> The VectorBlox MXP Software Development Kit (SDK), provided as an unencrypted <code>.tar.gz</code> file.</p></li>
+<li><p>One of the supported development boards, if you want to use one of the pre-built FPGA bitstreams included in the SDK.</p></li>
+</ul>
+<blockquote>
+<p>Version 11.0 or later of Quartus II is required because it includes the Nios II Embedded Design Suite (EDS), which supports both Qsys, needed for hardware generation, and the latest Nios II Software Build Tools (based on gcc 4), needed for compiling and debugging.</p>
+<p>You should <strong><em>not</em></strong> install the <strong><em>Legacy Tools</em></strong> package that comes as an optional Altera download – it provides an older version of the Nios II compiler (based on gcc 3) and software that predates Qsys.</p>
+</blockquote>
+<blockquote>
+<p>Note: Reference designs for the Altera/Terasic DE4 board were created with Quartus II 12.1. The UniPHY memory controller constraints in the QSF file are not backwards compatible with the UniPHY from older versions of Quartus II.</p>
+</blockquote>
+<h2 id="installation_installing"><span class="header-section-number">1.2</span> Installing</h2>
+<ul>
+<li><p>Install Altera Quartus II software according to Altera's instructions.</p>
+<p><a href="http://www.altera.com/download/dnl-index.jsp">http://www.altera.com/download/dnl-index.jsp</a></p>
+<p>Note the pathname where these tools are installed. For example, under Windows, the default install location for version 11.0 is <code>C:\ALTERA\11.0\quartus</code> and the environment variable <code>QUARTUS_ROOTDIR</code> will be set to this location.</p></li>
+<li><p>Follow Altera's instructions for installing the USB Blaster device driver.</p>
+<p><a href="http://www.altera.com/download/drivers/dri-index.html">http://www.altera.com/download/drivers/dri-index.html</a></p></li>
+<li><p><strong>For releases containing a SDK and hardware IP:</strong> Using a PGP tool, decrypt the provided <code>.tar.gz</code> file.</p></li>
+<li><p>Proceed to the <code>QUARTUS_ROOTDIR/../ip</code> directory and extract the VectorBlox <code>.tar.gz</code> file. The files will be untarred to <code>QUARTUS_ROOTDIR/../ip/vectorblox</code>.</p>
+<blockquote>
+<p>Windows users can extract the file using the <code>tar</code> command from the Nios II Command Shell. The syntax to extract the file <code>foo.tar.gz</code> is <code>tar zxf foo.tar.gz</code>.</p>
+</blockquote></li>
+</ul>
+<p>The directory structure is shown below. If your release does not contain the hardware IP, the <code>mxp</code> and <code>ncs_shim</code> directories will not be present.</p>
+<pre><code>vectorblox/
+    docs/
+        (VectorBlox MXP documentation)
+    examples/
+        boards/  (Example designs for common development boards)
+            &lt;board_name_1&gt;/
+                prebuilt_&lt;board_name_1&gt;_v1/
+                    bsp/
+                    vblox1.sof (pre-built FPGA bitstream for an MXP with
+                                one vector lane)
+                ...
+                prebuilt_&lt;board_name_1&gt;_v&lt;N&gt;/
+                    bsp/
+                    vblox1.sof (pre-built FPGA bitstream for an MXP with
+                                N vector lanes)
+                src/
+                    (Quartus project design files)
+            &lt;board_name_2&gt;
+                ...
+        software/
+            demo/
+                (demonstration programs for specific development boards)
+            lib/
+                (shared library code)
+            bmark/
+                (MXP benchmark programs)
+    mxp/
+        rtl/
+            license.dat (VectorBlox MXP license file)
+            ...
+            (encrypted RTL files for VectorBlox MXP)
+            ...
+        vbxapi/
+            (VectorBlox MXP driver, packaged for Altera&#39;s BSP generator)
+        vbxware/
+            (VBXware software library, packaged for Altera&#39;s BSP generator)
+    ncs_shim/
+        rtl/
+            ...
+            (encrypted RTL files for Nios II Custom Instruction Slave Shim)
+            ...</code></pre>
+<p>To install the license file for the hardware IP, please refer to the <a href="http://www.altera.com/literature/manual/quartus_install.pdf">Altera Software Installation and Licensing manual</a>.</p>
+<h1 id="quickstart_hardware"><span class="header-section-number">2</span> Hardware</h1>
+<p>A VectorBlox MXP system always uses a Nios II/f as a host CPU. This host CPU provides the MXP with instructions, and run the unaccelerated portions of your C/C++ application. You should always start with a working Nios II/f system in Qsys, then add MXP to it.</p>
+<p>This section describes how to instantiate the VectorBlox MXP processor into a Qsys system. Some familiarity with Qsys is assumed; please refer to the <em>System Design with Qsys</em> section of the <a href="http://www.altera.com/literature/lit-qts.jsp">Quartus II Handbook</a> for further details on Qsys.</p>
+<p>You must ensure that the VectorBlox components are in the Qsys IP Search Path. If you extracted the Vectorblox MXP distribution into <code>QUARTUS_ROOTDIR/../ip</code> or into the <code>ip</code> subdirectory of your Quartus project, Qsys will be able find the VectorBlox components automatically. Otherwise, you can add a directory to the IP Search Path in Qsys; from the <strong><em>Tools</em></strong> menu, open the <strong><em>Options</em></strong> dialog box.</p>
+<div class="figure">
+<img src="images/qsys_component_library.png" alt="Qsys Component Library" /><p class="caption">Qsys Component Library</p>
+</div>
+<p>The figure above shows the VectorBlox components in the Qsys Component Library.</p>
+<blockquote>
+<p>The <strong>Custom Instruction Slave Shim</strong> component is glue logic required to connect a Nios II CPU to the VectorBlox MXP.</p>
+</blockquote>
+<h2 id="vectorblox_mxp_qsys_parameters"><span class="header-section-number">2.1</span> VectorBlox MXP Qsys Parameters</h2>
+<p>To add a VectorBlox MXP instance to your Qsys system, double-click on <strong><em>VectorBlox MXP</em></strong>. Qsys will open the parameter editor shown in the figure. The parameters are described below.</p>
+<div class="figure">
+<img src="images/qsys_mxp_parameters.png" />
+</div>
+<h4 id="number-of-vector-lanes"><span class="header-section-number">2.1.0.1</span> Number of Vector Lanes</h4>
+<blockquote>
+<p>The number of 32-bit vector lanes. This must be a power of 2. Each vector lane requires about the same amount of resources as the Nios II/f host CPU.</p>
+</blockquote>
+<h4 id="number-of-memory-lanes"><span class="header-section-number">2.1.0.2</span> Number of Memory Lanes</h4>
+<blockquote>
+<p>The data bus width of the MXP DMA Engine's Avalon-MM master interface expressed in terms of 32-bit lanes. The number of memory lanes must be a power of two and no larger than the number of vector lanes. For best performance, the width of this interface should match the width of the Avalon slave port of the external memory controller.</p>
+</blockquote>
+<h4 id="maximum-burst-size-in-beats"><span class="header-section-number">2.1.0.3</span> Maximum Burst Size in Beats</h4>
+<blockquote>
+<p>The maximum number of beats per burst issued by the DMA Engine's Avalon-MM master interface. A beat is a clock cycle in which data is transferred between a master and slave interface. Using a larger value can improve the bandwidth between the MXP and slave devices. However, a very large value could potentially starve other masters (such as the Nios II/f host) from accessing a slave. Likewise, very small values will divide long transfers int very short bursts, losing potential bandwidth during the gaps.</p>
+</blockquote>
+<h4 id="scratchpad-size"><span class="header-section-number">2.1.0.4</span> Scratchpad Size</h4>
+<blockquote>
+<p>The Scratchpad RAM size in kilobytes. VectorBlox recommends 4KB per vector lane for most applications.</p>
+</blockquote>
+<h4 id="multiplier-performance"><span class="header-section-number">2.1.0.5</span> Multiplier Performance</h4>
+<blockquote>
+<p>This sets the minimum multiplier size. This can be used to reduce the number of hard multipliers used, at the cost of performance. If set to <em>Byte</em>, then byte, halfword, and word multipliers are instantiated and multiplication of any element size runs at full speed. If set to <em>Halfword</em>, only word and halfword multipliers are instantiated; byte-width multiplication will be executed with the halfword multiplier and run at half speed. If set to <em>Word</em>, only word multipliers are instantiated; halfword-width multiplication will run at half speed and byte-width multiplication will run at quarter speed.</p>
+</blockquote>
+<h4 id="runs-synchronously-to-the-nios-ii-core"><span class="header-section-number">2.1.0.6</span> Runs synchronously to the Nios II core</h4>
+<blockquote>
+<p>Check this box if the Nios II CPU and the VectorBlox MXP are in the same clock domain. This determines whether a single-clock or dual-clock FIFO is used between the Nios II and the MXP. Dual-clock FIFOs have slightly higher latency to resolve metastability, which can sometimes negatively affect performance.</p>
+</blockquote>
+<h4 id="fixed-point-multiply-format"><span class="header-section-number">2.1.0.7</span> Fixed-Point Multiply Format</h4>
+<blockquote>
+<p>These parameters affect the fixed-point multiply operation. They specify the number of least-significant bits that will be used to represent the fractional part of 32-bit, 16-bit, and 8-bit fixed-point numbers.</p>
+<p>The fixed-point formats are also displayed in Q notation, where the first number specifies the number of integer bits and the second number specifies the number of fractional bits.</p>
+</blockquote>
+<p>Below the editable parameters are the Derived Avalon Parameters, which show the inferred widths of various Avalon ports:</p>
+<h4 id="avalon-master-data-bus-width"><span class="header-section-number">2.1.0.8</span> Avalon Master Data Bus Width</h4>
+<blockquote>
+<p>The data bus width, in bits, of the DMA Engine's Avalon-MM master interface. This is derived from the number of memory lanes.</p>
+</blockquote>
+<h4 id="avalon-master-burst-size"><span class="header-section-number">2.1.0.9</span> Avalon Master Burst Size</h4>
+<blockquote>
+<p>The Avalon-MM master interface's maximum burst size in bytes, as determined by the memory bus width and the maximum number of beats per burst.</p>
+</blockquote>
+<h4 id="avalon-master-burstcount-width"><span class="header-section-number">2.1.0.10</span> Avalon Master Burstcount Width</h4>
+<blockquote>
+<p>The width of the Avalon-MM master interface's <code>burstcount</code> output, as determined by the maximum burst size and the memory bus width.</p>
+</blockquote>
+<h4 id="avalon-slave-address-width"><span class="header-section-number">2.1.0.11</span> Avalon Slave Address Width</h4>
+<blockquote>
+<p>The MXP's Avalon-MM slave address width as determined by the scratchpad size.</p>
+</blockquote>
+<h2 id="qsys_connections"><span class="header-section-number">2.2</span> Qsys Connections</h2>
+<p>This section describes the MXP processor's interfaces, shown in the figure below.</p>
+<div class="figure">
+<img src="images/qsys_ncs_connection.png" />
+</div>
+<h4 id="instr_conduit"><span class="header-section-number">2.2.0.1</span> instr_conduit</h4>
+<blockquote>
+<p>The MXP connects to the Nios II CPU's Custom Instruction Master interface via a separate component, the <em>Custom Instruction Slave Shim</em>. The Nios CPU's Custom Instruction Master interface connects to the shim's Custom Instruction Slave interface, and the shim connects to the MXP core via an Avalon Conduit interface we call an instruction conduit. The figure above shows how a Nios CPU, MXP core, and Custom Instruction Slave Shim should be connected together in Qsys.</p>
+</blockquote>
+<h4 id="avalon_master"><span class="header-section-number">2.2.0.2</span> avalon_master</h4>
+<blockquote>
+<p>This is the MXP DMA Engine's interface to external memory. The data bus width is determined by the number of memory lanes selected in the MXP Parameter Editor.</p>
+</blockquote>
+<h4 id="avalon_slave"><span class="header-section-number">2.2.0.3</span> avalon_slave</h4>
+<blockquote>
+<p>This slave interface provides external access to the MXP's scratchpad memory. The address width is determined by the scratchpad size.</p>
+</blockquote>
+<h4 id="core_clk"><span class="header-section-number">2.2.0.4</span> core_clk</h4>
+<blockquote>
+<p>This is the main MXP clock. The MXP's Avalon Memory Mapped Master and Slave interfaces run synchronously to <strong>core_clk</strong>. <strong>core_clk</strong> does not have to be synchronous to the Nios II CPU clock. However, if it is synchronous to the Nios clock, you should specify this in the MXP Parameter Editor to prevent an asynchronous FIFO from being unnecessarily instantiated on the custom instruction interface.</p>
+</blockquote>
+<h4 id="core_clk_2x"><span class="header-section-number">2.2.0.5</span> core_clk_2x</h4>
+<blockquote>
+<p>This clock must be double the frequency of <strong>core_clk</strong> and must be synchronous to <strong>core_clk</strong>. It should be generated from the same PLL that provides <strong>core_clk</strong>.</p>
+</blockquote>
+<h4 id="core_reset"><span class="header-section-number">2.2.0.6</span> core_reset</h4>
+<blockquote>
+<p>This is the active high reset input. Assertion and deassertion must be synchronous to <strong>core_clk</strong> and <strong>core_clk_2x</strong>.</p>
+</blockquote>
+<!---
+Qsys System Recommendations {#qsys_system_recommendations}
+-------------------------
+
+This section describes how you should hook up your Qsys system for best results.
+
+####Interval Timers
+![](images/qsys_sys_clk_timer.png)
+![](images/qsys_timestamp_timer.png)
+
+####JTAG UART
+![](images/qsys_jtag_uart.png)
+
+####DRAM Controller
+![](images/qsys_sdram_controller.png)
+
+####Avalon Bridges
+![](images/qsys_avalon_pipeline_bridge.png)
+-->
+
+
+<h2 id="qsys_system_generation"><span class="header-section-number">2.3</span> Qsys System Generation</h2>
+<p>Once all of the components in your Qsys system have their interfaces connected correctly, you can proceed to Qsys generation by clicking on the <em>Generation</em> tab, setting options, then clicking <em>Generate</em>.</p>
+<p>To generate synthesizable HDL, check <strong><em>Create HDL design files for synthesis</em></strong> in the Synthesis subsection.</p>
+<p>To generate a simulation model, you must have a VectorBlox license that supports IP Functional Simulation (IPFS) model generation in either Verilog or VHDL (or both). If your license supports it, select either Verilog or VHDL from the <strong><em>Create Simulation Model</em></strong> drop-down menu in the Simulation subsection.</p>
+<!---
+Quartus Compilation
+------------------
+-->
+
+
+
+<h1 id="quickstart_software"><span class="header-section-number">3</span> Software</h1>
+<p>This section describes how to download one of the provided pre-built FPGA bitstreams to a development board and how to compile and run a test program on it.</p>
+<p>If you have downloaded the VectorBlox MXP preview release from github, the string <strong>TOPDIR</strong> below refers to the top-level directory from the extracted download.</p>
+<p>If you have a VectorBlox MXP hardware IP release, the string <strong>TOPDIR</strong> refers to the <code>examples</code> subdirectory of the extracted release.</p>
+<h2 id="software_prerequisites"><span class="header-section-number">3.1</span> Prerequisites</h2>
+<p>Before you begin, make sure you have:</p>
+<ul>
+<li><p>Installed Altera Quartus II 11.0 or later.</p>
+<p>Note that the pre-built bitstreams were created with version 13.0sp1, so you will need to use version 13.0sp1 or later of the Quartus II Programmer to download these bitstreams to the FPGA. You can download the latest version of the Quartus II Programmer as a standalone program from the Altera web site if you do not wish to install a full upgrade of Quartus II.</p></li>
+<li><p>Installed and tested the USB Blaster device driver.</p></li>
+<li><p>A supported development board. See the contents of <code>TOPDIR/boards/</code>.</p></li>
+<li><p>Connected your development board to your computer via USB cable.</p></li>
+</ul>
+<h2 id="software_configuring"><span class="header-section-number">3.2</span> Configuring the board</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Start a Nios II Command Shell</strong></p>
+<p>This sets up the proper environment variables for using the Nios II compiler system. Under Windows, this is a bash-shell under the Cygwin environment.</p></li>
+<li><p><strong>Connect to the board</strong></p>
+<p>Run <code>jtagconfig</code> which finds the USB Blaster and connects to the development board. If the response is &quot;No JTAG hardware available,&quot; be sure the USB cable is connected and the board is turned on.</p>
+<p>If more than one board is connected, the target cable will have to be specified in all the commands below, adding <code>-c CABLE_NUM</code> to each command.</p></li>
+<li><p><strong>Configure the FPGA</strong></p>
+<p>Navigate to one of the prebuilt VectorBlox MXP systems for your development board, located in <code>TOPDIR/boards/&lt;board_name&gt;/prebuilt_*</code>.</p>
+<p>For example, for the DE2-115 board, change directory to <code>TOPDIR/boards/de2_115/prebuilt_de2_115_v16</code> for a 16-lane MXP system.</p>
+<p>From here, download the <code>.sof</code> file to the FPGA board using the command line:</p>
+<pre><code>quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p>Alternatively, you may start the GUI using <code>quartus_pgmw</code>, press <strong><em>Add File...</em></strong> and choose the <code>.sof</code> file, press <strong><em>Hardware Setup...</em></strong> and choose <strong><em>USB Blaster</em></strong> in the pulldown list, and finally press the <strong><em>Start</em></strong> button.</p>
+<p>Now, assuming you are still in the directory containing the SOF, store the absolute path of the pre-built system's Board Support Package in a shell variable. This will save typing later. In Linux, run</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>In Windows, Windows-style paths are expected by Altera's software Makefiles, so instead use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre></li>
+</ol>
+<h2 id="software_running"><span class="header-section-number">3.3</span> Running the software</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Make the executable</strong></p>
+<p>Navigate to a test application such as <code>vbw_vec_add_t</code>, located in <code>TOPDIR/software/bmark/vbw_vec_add_t</code>.</p>
+<p>To compile the program for the FPGA bitstream you previously selected, you need to pass the absolute path of the BSP to <code>make</code>. Assuming you have already saved this path in the <code>BSP_ROOT_DIR</code> shell variable as described earlier, you can run</p>
+<pre><code>make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>After a long list of messages and a few seconds, the file <code>test.elf</code> should have been created.</p>
+<p>Note that we used the <code>clean_all</code> target first to ensure that any libraries that might have been compiled against a different BSP in the past were cleaned and re-compiled. If you know that the libraries were already compiled for the selected BSP, you can omit the <code>clean_all</code> target.</p></li>
+<li><p><strong>Download the executable</strong></p>
+<p>Download and run the executable from the command line:</p>
+<pre><code>nios2-download -g -r test.elf</code></pre>
+<p>After the download completes, the flag <code>-r</code> resets the Nios II computer system, and the flag <code>-g</code> tells the computer to 'go' or execute the program.</p></li>
+<li><p><strong>View execution output</strong></p>
+<p>The executable may use stdin or stdout for <code>printf()</code>, <code>scanf()</code>, and similar functions. A terminal emulator can connect with the Nios II computer system to provide this I/O behaviour by running</p>
+<pre><code>nios2-terminal</code></pre>
+<p>If the Nios II program wants to disconnect with the terminal, it can print a Control-D character with</p>
+<pre><code>putchar(4);</code></pre>
+<p>To disconnect manually host-side, type <code>C-c</code>. Note that Control-C does not actually stop the application from running. However, with the <code>nios2-terminal</code> disconnected, the application may eventually block if it fills its <code>printf()</code> buffer and cannot flush the output device.</p></li>
+</ol>
+<h1 id="video-demo-application"><span class="header-section-number">4</span> Video Demo Application</h1>
+<p>We have written a demonstration program that runs on supported boards with video output capability. It provides a visual demonstration of the acceleration capabilities of the MXP processor by allowing the user to see the performance difference between algorithms running on the scalar host CPU alone and vectorized MXP implementations of the same algorithms.</p>
+<p>On systems with video output, the algorithms demonstrated are</p>
+<ul>
+<li><p>A two-dimensional n-body particle repulsion simulation with 512 particles and an external force that varies according to a Lissajous pattern. Q16.16 fixed-point arithmetic is used. The MXP implementation of the algorithm uses a custom instruction pipeline that computes the sum of the forces from all other particles on a given particle. The pipeline is described in the following conference paper: A. Severance, J. Edwards, H. Omidian, G. Lemieux, &quot;Soft Vector Processors with Streaming Pipelines,&quot; to appear at <em>International Symposium on Field-Programmable Gate Arrays (FPGA)</em>, February, 2014 (<a href="http://www.ece.ubc.ca/~lemieux/publications/bytopic.html">http://www.ece.ubc.ca/~lemieux/publications/bytopic.html</a>). The MXP implementation also makes use of a custom instruction for fixed-point division, if available.</p></li>
+<li><p>Mandelbrot set calculation at different zoom levels.</p></li>
+<li><p>Sobel edge detection run on half of the screen after each frame of the n-body particle simulation.</p></li>
+</ul>
+<p>On systems that also have video input, some additional algorithms are demonstrated:</p>
+<ul>
+<li><p>Sobel edge detection on the video input.</p></li>
+<li><p>Motion estimation (motion tracking) on the video input. Two boxes track motion in the input video using a sum-of-absolute-differences calculation. The boxes are re-centred every 400 input frames.</p></li>
+<li><p>Face Detection on the video input using Haar-like features. A green box is drawn around each detected face.</p></li>
+<li><p>Multi-algorithm mode with the particle simulation overlaid on top of the video input, with edge detection also running in the top left quadrant, motion estimation in the top right quadrant, and video inversion in the bottom right quadrant.</p></li>
+</ul>
+<h2 id="de2-115-vga-demo"><span class="header-section-number">4.1</span> DE2-115 VGA Demo</h2>
+<p>The demo for the DE2-115 board outputs 800x600 video on the VGA port. Connect a monitor to the VGA port to see the video output.</p>
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V16 system:</p>
+<pre><code>cd boards/de2_115/prebuilt_de2_115_v16
+quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>or, in Windows, use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre>
+<p>Compile the demo:</p>
+<pre><code>cd ../../../software/demo/de2_115
+make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>Download the ELF to the board and connect to the serial console:</p>
+<pre><code>nios2-download -r -g de2_demo.elf &amp;&amp; nios2-terminal</code></pre>
+<p>The rightmost DIP switches are used to select the mode of operation:</p>
+<p><strong>SW0</strong> Toggles between the Mandelbrot and Particle Repulsion algorithms.</p>
+<p><strong>SW1</strong> When running Particle Repulsion, toggles Edge Detection on the left half of the screen.</p>
+<p><strong>SW2</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode).</p>
+<h2 id="de4-230-hsmc-dvi-hd-video-processing-demo"><span class="header-section-number">4.2</span> DE4-230 + HSMC-DVI HD Video Processing Demo</h2>
+<p>The de4_dvi demo uses Terasic's HSMC-DVI daughter card for video input and output. The pre-built SOFs expect the HSMC-DVI card to be connected to HSMC connector B (closest to the power switch). A 1920x1080p 60Hz video source should be connected to the DVI RX port, and a 1080p monitor should be connected to the DVI TX port.</p>
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V32 system:</p>
+<pre><code>cd boards/de4_230_dvi/prebuilt_de4_230_dvi_v32
+quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p><strong>NOTE:</strong> After downloading a pre-built SOF for the first time, you must press Button[1] to reprogram the EDID EEPROM on the HSMC-DVI card so that the DVI RX port appears as a monitor capable of 1920x1080p @ 60 Hz. LED[7] will briefly blink as the EEPROM is re-programmed. If EDID initialization fails, please remove any cable attached to the DVI RX port and press Button[1] to try again.</p>
+<p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>or, in Windows, use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre>
+<p>Compile the demo:</p>
+<pre><code>cd ../../../software/demo/de4_dvi
+make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>Download the ELF to the board and connect to the serial console:</p>
+<pre><code>nios2-download -r -g de4_demo.elf &amp;&amp; nios2-terminal</code></pre>
+<p>The four DIP switches near the USB Blaster port are used to select the mode of operation.</p>
+<p><strong>SW2-0</strong> are combined to select from the modes below:</p>
+<ul>
+<li>000 - Video Pass-through</li>
+<li>001 - Particle Repulsion</li>
+<li>010 - Edge Detection on the input video</li>
+<li>011 - Motion Estimation on the input video</li>
+<li>100 - Mandelbrot</li>
+<li>101 - Haar Face Detection on the input video</li>
+<li>110 - Split Mode (Particle Repulsion with Edge Detection running on the right half of the screen)</li>
+<li>111 - Multi Mode (Particle Repulsion overlaid on the input video with Edge Detection, Motion Estimation, Inversion running in different quadrants)</li>
+</ul>
+<p><strong>SW3</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode).</p>
+<h2 id="veek-mt-touchscreen-based-demo"><span class="header-section-number">4.3</span> VEEK-MT Touchscreen-based Demo</h2>
+<p>The veek demo uses the on-board 5-megapixel digital image sensor for video input and and the 800x480 LCD touch screen for video output. (Video output is not mirrored to the VGA port.)</p>
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V16 system:</p>
+<pre><code>cd boards/veek/prebuilt_veek_v16
+quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
+<p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
+<pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
+<p>or, in Windows, use</p>
+<pre><code>BSP_ROOT_DIR=`cygpath -wa bsp`</code></pre>
+<p>Compile the demo:</p>
+<pre><code>cd ../../../software/demo/veek
+make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
+<p>Download the ELF to the board and connect to the serial console:</p>
+<pre><code>nios2-download -r -g veek_demo.elf &amp;&amp; nios2-terminal</code></pre>
+<p>The touch screen is used to select the mode of operation:</p>
+<p><strong>Top-left</strong> Toggles between the Nios-only implementation of an algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode). Pressing any other region runs the selected algorithm in vector mode.</p>
+<p><strong>Top-centre</strong> Selects Edge Detection</p>
+<p><strong>Top-right</strong> Selects Face Detection</p>
+<p><strong>Bottom-left</strong> Selects Motion Estimation</p>
+<p><strong>Bottom-centre</strong> Selects Mandelbrot</p>
+<p><strong>Bottom-right</strong> Selects Particle Repulsion</p>
+</div>
+</div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.tocify.min.js"></script>
+<script>
+$(function() {
+    var toc = $("#toc").tocify({
+        selectors: "h1, h2",
+        history: false,
+        smoothScrollSpeed: "fast",
+        }).data("toc-tocify");
+      $(".optionName").popover({ trigger: "hover" });
+});
+</script>
+</body>
+</html>
