@@ -7,3 +7,4 @@
 # Library files
 *.a    
 !libvbxlib.a 
+!libhal_bsp.a
