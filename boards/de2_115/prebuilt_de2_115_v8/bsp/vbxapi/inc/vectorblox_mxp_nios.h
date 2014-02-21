@@ -91,6 +91,7 @@ static vbx_mxp_dev_t dev = \
 		(name##_SCRATCHPAD_KB*1024), \
 		(name##_CORE_FREQ), \
 		(name##_MEMORY_WIDTH_LANES*4), \
+		(name##_VECTOR_LANES*4), \
 		(name##_VECTOR_LANES), \
 		(name##_VCI_LANES), \
 		(name##_MULFXP_WORD_FRACTION_BITS), \

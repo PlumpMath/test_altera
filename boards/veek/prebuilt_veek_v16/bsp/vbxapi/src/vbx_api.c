@@ -61,7 +61,7 @@ vbx_mxp_t *vbx_mxp_ptr;
 
 // --------------------------------------------------------
 // System-wide initialization
- 
+
 /** Initialize MXP processor
  *
  * param[out] this_mxp
@@ -116,7 +116,7 @@ static void print_sp_malloc_full( size_t num_bytes, size_t padded_bytes )
 	printf( "but only %d bytes available.\n", (int)vbx_sp_getfree() );
 }
 
-vbx_void_t *vbx_sp_malloc_debug( int LINE, char *FNAME, size_t num_bytes )
+vbx_void_t *vbx_sp_malloc_debug( int LINE,const char *FNAME, size_t num_bytes )
 {
 	// print pretty error messages
 	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
@@ -125,7 +125,8 @@ vbx_void_t *vbx_sp_malloc_debug( int LINE, char *FNAME, size_t num_bytes )
 		VBX_FATAL(LINE,FNAME,-1);
 	}
 
-	size_t padded = VBX_PAD_UP( num_bytes, this_mxp->dma_alignment_bytes );
+	// pad to scratchpad width to reduce occurrence of false hazards
+	size_t padded = VBX_PAD_UP( num_bytes, this_mxp->scratchpad_alignment_bytes );
 	size_t freesp = (size_t)(this_mxp->scratchpad_end - this_mxp->sp); //VBX_SCRATCHPAD_END - (size_t)vbx_sp; // vbx_sp_getfree();
 
 	vbx_void_t  *result = NULL;
@@ -136,7 +137,7 @@ vbx_void_t *vbx_sp_malloc_debug( int LINE, char *FNAME, size_t num_bytes )
 	} else if( num_bytes > 0  &&  freesp >= padded ) {
 		result        = this_mxp->sp;
 		this_mxp->sp += padded;
-#if VBX_DEBUG_MALLOC
+#if VBX_DEBUG_SP_MALLOC
 		printf("sp_malloc %d bytes padded to %d, sp=0x%08x\n", num_bytes, padded, this_mxp->sp);
 #endif
 	}
@@ -162,7 +163,8 @@ vbx_void_t *vbx_sp_malloc_nodebug( size_t num_bytes )
 		return NULL;
 
 	// add padding and allocate
-	size_t padded = VBX_PAD_UP( num_bytes, this_mxp->dma_alignment_bytes );
+	// pad to scratchpad width to reduce occurrence of false hazards
+	size_t padded = VBX_PAD_UP( num_bytes, this_mxp->scratchpad_alignment_bytes );
 	vbx_void_t *old_sp = this_mxp->sp;
 	this_mxp->sp += padded;
 
@@ -176,7 +178,7 @@ vbx_void_t *vbx_sp_malloc_nodebug( size_t num_bytes )
 	return old_sp;
 }
 
-void vbx_sp_free_debug( int LINE, char *FNAME )
+void vbx_sp_free_debug( int LINE, const char *FNAME )
 {
 	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
 	if( !this_mxp )  {
@@ -225,7 +227,7 @@ vbx_void_t *vbx_sp_get()
 	return this_mxp ? this_mxp->sp : NULL;
 }
 
-void vbx_sp_set_debug( int LINE, char *FNAME, vbx_void_t *new_sp )
+void vbx_sp_set_debug( int LINE, const char *FNAME, vbx_void_t *new_sp )
 {
 	// print pretty error messages
 	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
@@ -233,7 +235,7 @@ void vbx_sp_set_debug( int LINE, char *FNAME, vbx_void_t *new_sp )
 		VBX_PRINTF( "ERROR: failed to call _vbx_init().\n" );
 		VBX_FATAL(LINE,FNAME,-1);
 	} else if( (this_mxp->scratchpad_addr <= new_sp && new_sp <= this_mxp->scratchpad_end)
-	           && VBX_IS_ALIGNED(new_sp,this_mxp->dma_alignment_bytes) ) {
+	           && VBX_IS_ALIGNED(new_sp, 4) ) {
 		this_mxp->sp = new_sp;
 	} else {
 		VBX_PRINTF( "ERROR: attempt to set scratchpad to illegal or unaligned address 0x%08lx.\n", (long int)new_sp );
@@ -252,15 +254,13 @@ void vbx_sp_set_nodebug( vbx_void_t *new_sp )
 	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
 	if( this_mxp
 	           && (this_mxp->scratchpad_addr <= new_sp && new_sp <= this_mxp->scratchpad_end)
-	           && VBX_IS_ALIGNED(new_sp,this_mxp->dma_alignment_bytes) ) {
+	           && VBX_IS_ALIGNED(new_sp, 4) ) {
 		this_mxp->sp = new_sp;
 	}
 }
 
 
-#define DO_THE_PUSH    this_mxp->spstack[ this_mxp->spstack_top++ ] = this_mxp->sp
-
-void vbx_sp_push_debug( int LINE, char *FNAME )
+void vbx_sp_push_debug( int LINE, const char *FNAME )
 {
 	// print pretty error messages
 	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
@@ -271,27 +271,12 @@ void vbx_sp_push_debug( int LINE, char *FNAME )
 		VBX_PRINTF("ERROR: attempted to use vbx_sp_push() past top of stack.\n");
 		VBX_FATAL(LINE,FNAME,-1);
 	}
-	DO_THE_PUSH;
-}
-
-void vbx_sp_push_nodebug()
-{
-	if( VBX_DEBUG_LEVEL ) {
-		// print pretty error messages
-		vbx_sp_push_debug( __LINE__, __FILE__ );
-	}
-
-	// do it, but do not print pretty error messages
-	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
-	if( this_mxp && this_mxp->spstack && this_mxp->spstack_top < this_mxp->spstack_max ) {
-		DO_THE_PUSH;
-	}
+	this_mxp->spstack[ this_mxp->spstack_top++ ] = this_mxp->sp;
 }
 
 
-#define DO_THE_POP     this_mxp->sp = this_mxp->spstack[ --this_mxp->spstack_top ]
+void vbx_sp_pop_debug( int LINE, const char *FNAME )
 
-void vbx_sp_pop_debug( int LINE, char *FNAME )
 {
 	// print pretty error messages
 	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
@@ -302,30 +287,16 @@ void vbx_sp_pop_debug( int LINE, char *FNAME )
 		VBX_PRINTF("ERROR: attempted vbx_sp_pop() before first push.\n");
 		VBX_FATAL(LINE,FNAME,-1);
 	}
-	DO_THE_POP;
-}
-
-void vbx_sp_pop_nodebug()
-{
-	if( VBX_DEBUG_LEVEL ) {
-		// print pretty error messages
-		vbx_sp_pop_debug( __LINE__, __FILE__ );
-	}
-
-	// do it, but do not print pretty error messages
-	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
-	if( this_mxp  &&  this_mxp->spstack  &&  0 < this_mxp->spstack_top ) {
-		DO_THE_POP;
-	}
+	this_mxp->sp = this_mxp->spstack[ --this_mxp->spstack_top ];
 }
 
 
 // --------------------------------------------------------
 // Memory allocation routines
 
-// Allocate and deallocate memory that is shared between Nios II core and vector processor core.
-// This shared memory is (1) uncached, and (2) properly aligned so DMA operations are permitted,
-// and (3) aligned to a Data cache linesize so a fraction of the line is not cachable.
+// Allocate and deallocate memory that is shared between host CPU and vector processor.
+// This shared memory is (1) uncached and (2) aligned to a Data cache linesize so a
+// fraction of the line is not cachable.
 //
 // The alloca() version allocates from the local stack. It will be automatically freed when the
 // current function returns.
@@ -346,7 +317,7 @@ void *vbx_shared_alloca_nodebug( size_t num_bytes, void *p )
 	return aligned_ptr;
 }
 
-void *vbx_shared_alloca_debug( int LINE, char *FNAME, size_t num_bytes, void *p )
+void *vbx_shared_alloca_debug( int LINE, const char *FNAME, size_t num_bytes, void *p )
 {
 	return vbx_shared_alloca_nodebug( num_bytes, p );
 }
@@ -379,3 +350,5 @@ void vbx_shared_free(void *shared_ptr)
 		vbx_uncached_free(alloced_ptr);
 	}
 }
+//used by simulator to suppress warnings
+int Wbad_sp_ptr_flag=1; //declared in vbxapi.c

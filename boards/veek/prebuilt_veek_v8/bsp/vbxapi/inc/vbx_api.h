@@ -60,29 +60,47 @@ void        _vbx_init( vbx_mxp_t *this_mxp );
 // Scratchpad APIs
 
 vbx_void_t *vbx_sp_malloc_nodebug(                      size_t num_bytes );
-vbx_void_t *vbx_sp_malloc_debug( int LINE, char *FNAME, size_t num_bytes );
+vbx_void_t *vbx_sp_malloc_debug( int LINE, const char *FNAME, size_t num_bytes );
 
-void        vbx_sp_free_debug( int LINE, char *FNAME );
+void        vbx_sp_free_debug( int LINE, const char *FNAME );
 void        vbx_sp_free_nodebug();
 
 vbx_void_t *vbx_sp_get();
 
 void        vbx_sp_set_nodebug(                      vbx_void_t *new_sp );
-void        vbx_sp_set_debug( int LINE, char *FNAME, vbx_void_t *new_sp );
+void        vbx_sp_set_debug( int LINE, const char *FNAME, vbx_void_t *new_sp );
 
 int         vbx_sp_getused();
 int         vbx_sp_getfree();
 
-void        vbx_sp_push_nodebug();
-void        vbx_sp_push_debug( int LINE, char *FNAME );
 
-void        vbx_sp_pop_nodebug();
-void        vbx_sp_pop_debug( int LINE, char *FNAME );
+static inline void vbx_sp_push_nodebug()
+{
+	// do it, but do not print pretty error messages
+	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
+	if( this_mxp && this_mxp->spstack && this_mxp->spstack_top < this_mxp->spstack_max ) {
+		this_mxp->spstack[ this_mxp->spstack_top++ ] = this_mxp->sp;
+	}
+}
+
+static inline void vbx_sp_pop_nodebug()
+{
+	// do it, but do not print pretty error messages
+	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP();
+	if( this_mxp  &&  this_mxp->spstack  &&  0 < this_mxp->spstack_top ) {
+		this_mxp->sp = this_mxp->spstack[ --this_mxp->spstack_top ];
+	}
+}
+
+void        vbx_sp_push_debug( int LINE, const char *FNAME );
+
+void        vbx_sp_pop_debug( int LINE, const char *FNAME );
+
 
 // Memory APIs
 
 void       *vbx_shared_alloca_nodebug( size_t num_bytes, void *p );
-void       *vbx_shared_alloca_debug( int LINE, char *FNAME, size_t num_bytes, void *p );
+void       *vbx_shared_alloca_debug( int LINE,const  char *FNAME, size_t num_bytes, void *p );
 void       *vbx_shared_malloc( size_t num_bytes );
 void        vbx_shared_free( void *shared_ptr );
 

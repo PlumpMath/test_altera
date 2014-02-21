@@ -69,6 +69,7 @@ extern "C" {
 
 ///////////////////////////////////////////////////////////////////////////
 #define VBX_DEBUG_MALLOC 0
+#define VBX_DEBUG_SP_MALLOC 0
 #define VBX_DEBUG_NO_SPSTACK 0
 #define VBX_DEBUG_VBXLIB 0
 #define VBX_USE_GLOBAL_MXP_PTR 1

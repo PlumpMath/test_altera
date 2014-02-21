@@ -138,6 +138,7 @@ typedef struct {
 	int         scratchpad_size; ///< Size of the scratchpad memory
 	int         core_freq; ///< MXP processor frequency
 	short       dma_alignment_bytes;
+	short       scratchpad_alignment_bytes;
 	short       vector_lanes; ///< Num of 32-bit vector lanes
 	short       vci_lanes; ///<Num of custom instruction lanes
 	char        fxp_word_frac_bits; ///< Num of fractional bit used with @ref vbx_word_t or @ref vbx_uword_t data types

@@ -40,7 +40,7 @@
  * @defgroup VBX_ASM VBX Assembly Macros
  * @brief VBX ASM Macros
  *
- * @ingroup VBXapi 
+ * @ingroup VBXapi
  */
 /**@{*/
 
@@ -900,10 +900,27 @@ extern "C" {
 
 #define _VBXASM __asm__ __volatile__
 
+// VCMZ_GTZ_3D is encoded as r25 (aka bt) in custom instruction operand
+// field. E.g.:
+//   custom  0,c4,r7,r8
+//   custom  1,c21,r6,bt
+// r25/bt is meant to be "used exclusively by the JTAG debug module [..]
+// as the breakpoint temporary" (Nios II Processor Reference Handbook), so
+// get warnings like this:
+//   {standard input}: Assembler messages:
+//   {standard input}:4028: Warning: The debugger will corrupt bt (r25).
+//   If you don't need to debug this code then use .set nobreak to turn off
+//   this warning.
+// These warnings can be safely ignored since bt is not actually used as a
+// source or destination operand by the custom instruction. "set .nobreak"
+// "allows assembly code to use ba and bt registers without warning."
+
 #define VBX_ASM(MODIFIERS,VMODE,VINSTR,DEST,SRCA,SRCB) \
 	VBX_S{ \
+		_VBXASM ( ".set nobreak"); \
 		_VBXASM ( "custom " N_INSTR_A_B     ", " MODIFIERS ", %0, %1"      : : "r" (SRCA), "r" (SRCB) ); \
 		_VBXASM ( "custom " N_INSTR_OP_DEST ", " VMODE     ", %0, " VINSTR : : "r" (DEST) );	    \
+		_VBXASM ( ".set break"); \
 	}VBX_E
 
 // -------------------------------------

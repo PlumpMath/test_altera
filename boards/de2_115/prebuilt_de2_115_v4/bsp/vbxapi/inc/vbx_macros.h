@@ -103,12 +103,7 @@ extern "C" {
 
 // ---------------------------------
 
-#define VBX_PADDING() \
-({ \
-	int padding; \
-	vbx_mxp_t *this_mxp = VBX_GET_THIS_MXP(); \
-	padding = max( VBX_CPU_DCACHE_LINE_SIZE, this_mxp->dma_alignment_bytes ); \
-})
+#define VBX_PADDING() (VBX_CPU_DCACHE_LINE_SIZE)
 
 // ---------------------------------
 
@@ -152,7 +147,7 @@ extern "C" {
  */
 #define vbx_sp_pop()               VBX_S{ VBX_DEBUG_FUNC0( vbx_sp_pop  );        }VBX_E
 
-/** Malloc in scratchpad *aligned*.
+/** Allocate in stack frame of caller
  *
  * @param[in] amount -- number of bytes to allocate
  */
