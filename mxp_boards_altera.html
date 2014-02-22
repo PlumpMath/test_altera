@@ -85,12 +85,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <li>64 KB of scratchpad memory.</li>
 <li>32-bit wide DMA interface.</li>
 <li>Fractional bits for fixed-point multiplication: 16 fractional bits for words, 15 for halfwords, 4 for bytes.</li>
-<li>Three custom instructions (each two logical lanes wide):
+<li>Three custom instructions:
 <ul>
 <li>fixed-point division (VCUSTOM0)</li>
 <li>fixed-point square root (VCUSTOM1)</li>
 <li>particle repulsion force calculation (for demo program) (VCUSTOM3)</li>
 </ul></li>
+<li>The custom instructions are two logical lanes wide (vci_lanes=2).</li>
 </ul>
 <p>See the <a href="#custom_instructions">section below</a> for details on how to use the custom instructions.</p>
 <p>The demonstration program in <code>software/demo/de2_115</code> shows how the MXP processor can be used to generate video frames and how to set up the frame reader to fetch frame data from memory and send it to the VGA output.</p>
@@ -118,12 +119,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <li>64 KB of scratchpad memory.</li>
 <li>32-bit wide DMA interface.</li>
 <li>Fractional bits for fixed-point multiplication: 16 fractional bits for words, 15 for halfwords, 4 for bytes.</li>
-<li>Three custom instructions (each two logical lanes wide):
+<li>Three custom instructions:
 <ul>
 <li>fixed-point division (VCUSTOM0)</li>
 <li>fixed-point square root (VCUSTOM1)</li>
 <li>particle repulsion force calculation (for demo program) (VCUSTOM3)</li>
 </ul></li>
+<li>The custom instructions are two logical lanes wide (vci_lanes=2).</li>
 </ul>
 <p>See the <a href="#custom_instructions">section below</a> for details on how to use the custom instructions.</p>
 <p>The demonstration program in <code>software/demo/veek</code> shows how the MXP processor can be used to process video frames and how to set up the frame reader and frame writer to read/write frame data from/to DRAM.</p>
