@@ -57,9 +57,8 @@ p {
 <p>Before you begin, make sure you have:</p>
 <ul>
 <li><p>Installed Altera Quartus II 11.0 or later.</p>
-<p>Quartus II 13.0sp1 is the currently recommended version, as this is the version that was used to create the pre-built bitstreams and BSPs.</p>
-<p>Version 13.0sp1 or later of the Quartus II Programmer is required to download the pre-built bitstreams to the FPGA. You can download the latest version of the Quartus II Programmer as a standalone program from the Altera web site if you do not wish to install a full upgrade of Quartus II.</p>
-<p>There is also a known incompatibility between the BSPs built with Quartus II 13.0sp1 and the newer version of gcc in Quartus II 13.1. The BSP Makefiles from 13.0sp1 use the <code>-EL</code> gcc option to specify little-endiannness, but in the newer version of gcc (4.7.3) included with Quartus II 13.1, the <code>-EL</code> option been replaced with the <code>-mel</code> option. You will therefore get a compilation error if you try to compile the BSPs for the pre-built bitstreams with Quartus II 13.0sp1.</p></li>
+<p>Quartus II 13.1 is the currently recommended version, as this is the version that was used to create the pre-built bitstreams and BSPs.</p>
+<p>Version 13.1 or later of the Quartus II Programmer is required to download the pre-built bitstreams to the FPGA. You can download the latest version of the Quartus II Programmer as a standalone program from the Altera web site if you do not wish to install a full upgrade of Quartus II.</p></li>
 <li><p>Installed and tested the USB Blaster device driver.</p></li>
 <li><p>A supported development board. See the contents of <code>TOPDIR/boards/</code>.</p></li>
 <li><p>Connected your development board to your computer via USB cable.</p></li>
