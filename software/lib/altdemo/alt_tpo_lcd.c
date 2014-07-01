@@ -131,6 +131,9 @@
 
 #include "sys/alt_irq.h"
 #include "system.h"
+
+//If no PIO, this fails to compile.
+#ifdef __ALTERA_AVALON_PIO
 #include "altera_avalon_pio_regs.h"
 #include "alt_tpo_lcd.h"
 
@@ -482,3 +485,5 @@ int alt_tpo_lcd_init(alt_tpo_lcd *lcd, alt_u32 width, alt_u32 height)
   
   return 0;
 }
+
+#endif //__ALTERA_AVALON_PIO

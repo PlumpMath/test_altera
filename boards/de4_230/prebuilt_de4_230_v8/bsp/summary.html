@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>20-Feb-2014 6:26:19 PM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>27-Jun-2014 6:45:36 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1392949579409</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1403919936759</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>./</td>
@@ -247,7 +247,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS and -Wl,--defsym, exit=_exit to ALT_LDFLAGS in public.mk.</td>
+<td width="20%">Description:</td><td>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS -D'exit(a)=_exit(a)' in public.mk.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>
@@ -436,7 +436,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -mstack-check to ALT_CPPFLAGS in public.mk.</td>
+<td width="20%">Description:</td><td>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-check to ALT_CPPFLAGS in public.mk.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>
@@ -1543,7 +1543,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>Enable BSP generation to query if SOPC system is big endian. If true ignores export of 'ALT_CFLAGS += -EB' to public.mk if big endian system. If true ignores export of 'ALT_CFLAGS += -EL' if little endian system.</td>
+<td width="20%">Description:</td><td>Enable BSP generation to query if SOPC system is big endian. If true ignores export of 'ALT_CFLAGS += -meb' to public.mk if big endian system.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>

@@ -88,12 +88,15 @@ static vbx_mxp_dev_t dev = \
 	{\
 		((vbx_void_t *)(((int)0x80000000)|(int)(name##_BASE                            ))), /* addr, force uncached */ \
 		((vbx_void_t *)(((int)0x80000000)|(int)(name##_BASE + name##_SCRATCHPAD_KB*1024))), /* end,  force uncached */ \
+		((vbx_void_t *)((int) 0)), /* instr_port_addr */ \
+		((uint32_t *)((int) 0)), /* instr_p */ \
 		(name##_SCRATCHPAD_KB*1024), \
 		(name##_CORE_FREQ), \
 		(name##_MEMORY_WIDTH_LANES*4), \
 		(name##_VECTOR_LANES*4), \
 		(name##_VECTOR_LANES), \
 		(name##_VCI_LANES), \
+		(name##_VCI_ENABLED), \
 		(name##_MULFXP_WORD_FRACTION_BITS), \
 		(name##_MULFXP_HALF_FRACTION_BITS), \
 		(name##_MULFXP_BYTE_FRACTION_BITS), \

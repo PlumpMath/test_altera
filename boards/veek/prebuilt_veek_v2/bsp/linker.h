@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'vblox1'
  * SOPC Builder design path: ../../../vblox1.sopcinfo
  *
- * Generated: Thu Feb 20 18:26:39 PST 2014
+ * Generated: Fri Jun 27 18:16:31 PDT 2014
  */
 
 /*

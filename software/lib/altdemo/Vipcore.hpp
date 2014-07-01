@@ -1,7 +1,11 @@
 #ifndef VIPCORE_HPP_
 #define VIPCORE_HPP_
 
+#ifdef __ALTERA_AVALON_PIO
 #include <altera_avalon_pio_regs.h>
+#else
+#include <io.h>
+#endif
 #include <sys/alt_irq.h>
 #include <stdio.h>
 

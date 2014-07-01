@@ -399,6 +399,8 @@ endif
 ifneq ($(SYS_LIB),)
 APP_LDFLAGS += -msys-lib=$(SYS_LIB)
 endif
+#link in c++ stdlib
+APP_LDFLAGS += -msys-lib=stdc++
 
 endif # !AVOID_NIOS2_GCC3_OPTIONS
 

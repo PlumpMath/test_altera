@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'vblox1'
  * SOPC Builder design path: ../../../vblox1.sopcinfo
  *
- * Generated: Thu Feb 20 18:26:56 PST 2014
+ * Generated: Fri Jun 27 18:45:39 PDT 2014
  */
 
 /*
@@ -92,6 +92,7 @@ SECTIONS
         KEEP (*(.irq));
         KEEP (*(.exceptions.entry.label));
         KEEP (*(.exceptions.entry.user));
+        KEEP (*(.exceptions.entry.ecc_fatal));
         KEEP (*(.exceptions.entry));
         KEEP (*(.exceptions.irqtest.user));
         KEEP (*(.exceptions.irqtest));
@@ -195,7 +196,7 @@ SECTIONS
         PROVIDE (__fini_array_end = ABSOLUTE(.));
         SORT(CONSTRUCTORS)
         KEEP (*(.eh_frame))
-        *(.gcc_except_table)
+        *(.gcc_except_table .gcc_except_table.*)
         *(.dynamic)
         PROVIDE (__CTOR_LIST__ = ABSOLUTE(.));
         KEEP (*(.ctors))
@@ -207,7 +208,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > mem_if_ddr2_emif_0 = 0x3a880100 /* Nios II NOP instruction */
+    } > mem_if_ddr2_emif_0 = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
     .rodata :
     {
@@ -310,7 +311,7 @@ SECTIONS
     .mem_if_ddr2_emif_0 LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_mem_if_ddr2_emif_0_start = ABSOLUTE(.));
-        *(.mem_if_ddr2_emif_0. mem_if_ddr2_emif_0.*)
+        *(.mem_if_ddr2_emif_0 .mem_if_ddr2_emif_0. mem_if_ddr2_emif_0.*)
         . = ALIGN(4);
         PROVIDE (_alt_partition_mem_if_ddr2_emif_0_end = ABSOLUTE(.));
         _end = ABSOLUTE(.);

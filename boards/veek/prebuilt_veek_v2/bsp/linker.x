@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'vblox1'
  * SOPC Builder design path: ../../../vblox1.sopcinfo
  *
- * Generated: Thu Feb 20 18:26:39 PST 2014
+ * Generated: Fri Jun 27 18:16:31 PDT 2014
  */
 
 /*
@@ -91,6 +91,7 @@ SECTIONS
         KEEP (*(.irq));
         KEEP (*(.exceptions.entry.label));
         KEEP (*(.exceptions.entry.user));
+        KEEP (*(.exceptions.entry.ecc_fatal));
         KEEP (*(.exceptions.entry));
         KEEP (*(.exceptions.irqtest.user));
         KEEP (*(.exceptions.irqtest));
@@ -194,7 +195,7 @@ SECTIONS
         PROVIDE (__fini_array_end = ABSOLUTE(.));
         SORT(CONSTRUCTORS)
         KEEP (*(.eh_frame))
-        *(.gcc_except_table)
+        *(.gcc_except_table .gcc_except_table.*)
         *(.dynamic)
         PROVIDE (__CTOR_LIST__ = ABSOLUTE(.));
         KEEP (*(.ctors))
@@ -206,7 +207,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > sdram = 0x3a880100 /* Nios II NOP instruction */
+    } > sdram = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
     .rodata :
     {
@@ -279,7 +280,7 @@ SECTIONS
     .sdram :
     {
         PROVIDE (_alt_partition_sdram_start = ABSOLUTE(.));
-        *(.sdram. sdram.*)
+        *(.sdram .sdram. sdram.*)
         . = ALIGN(4);
         PROVIDE (_alt_partition_sdram_end = ABSOLUTE(.));
         _end = ABSOLUTE(.);
@@ -292,7 +293,7 @@ SECTIONS
     .cfi_flash :
     {
         PROVIDE (_alt_partition_cfi_flash_start = ABSOLUTE(.));
-        *(.cfi_flash. cfi_flash.*)
+        *(.cfi_flash .cfi_flash. cfi_flash.*)
         . = ALIGN(4);
         PROVIDE (_alt_partition_cfi_flash_end = ABSOLUTE(.));
     } > cfi_flash
