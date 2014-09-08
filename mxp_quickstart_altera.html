@@ -347,10 +347,10 @@ make clean_all all BSP_ROOT_DIR=$BSP_ROOT_DIR</code></pre>
 <p><strong>SW2</strong> Toggles between the Nios-only implementation of the algorithm (scalar mode) and the vectorized MXP implementation of the algorithm (vector mode).</p>
 <h2 id="de4-230-hsmc-dvi-hd-video-processing-demo"><span class="header-section-number">4.2</span> DE4-230 + HSMC-DVI HD Video Processing Demo</h2>
 <p>The de4_dvi demo uses Terasic's HSMC-DVI daughter card for video input and output. The pre-built SOFs expect the HSMC-DVI card to be connected to HSMC connector B (closest to the power switch). A 1920x1080p 60Hz video source should be connected to the DVI RX port, and a 1080p monitor should be connected to the DVI TX port.</p>
-<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V32 system:</p>
-<pre><code>cd boards/de4_230_dvi/prebuilt_de4_230_dvi_v32
+<p>To run the demo, first download one of the pre-built SOFs for the board, e.g. for the V16 system:</p>
+<pre><code>cd boards/de4_230_dvi/prebuilt_de4_230_dvi_v16
 quartus_pgm -m JTAG -o P\;vblox1.sof</code></pre>
-<p><strong>NOTE:</strong> After downloading a pre-built SOF for the first time, you must press Button[1] to reprogram the EDID EEPROM on the HSMC-DVI card so that the DVI RX port appears as a monitor capable of 1920x1080p @ 60 Hz. LED[7] will briefly blink as the EEPROM is re-programmed. If EDID initialization fails, please remove any cable attached to the DVI RX port and press Button[1] to try again.</p>
+<p><strong>NOTE:</strong> The EDID EEPROM on the HSMC-DVI card must be re-programmed so that the DVI RX port appears as a monitor capable of 1920x1080p @ 60 Hz. The pre-built V2/V4/V8/V16 SOFs (but not the V32 one) contain a circuit to program the EDID appropriately. After downloading one of the V2-V16 SOFs, you can trigger the EDID write by pressing Button[1]. LED[7] will briefly blink as the EEPROM is re-programmed. If EDID initialization fails, please remove any cable attached to the DVI RX port and press Button[1] to try again. The EDID EEPROM is non-volatile, so you only need to re-program it once, and not each time you download a pre-built SOF.</p>
 <p>Store the absolute path to the BSP in a shell variable; in Linux use</p>
 <pre><code>BSP_ROOT_DIR=`pwd`/bsp</code></pre>
 <p>or, in Windows, use</p>
